@@ -19,25 +19,20 @@ public class Scientist {
 	private String country;
 	private String rationale;
 	private double strength;
+	private String field;
 	
 	public Scientist() {}
 
-	public Scientist(int year, String name, String image, String country, String rationale) {
+	public Scientist(int year, String name, String image, String country, String rationale, String field) {
 		super();
 		this.year = year;
 		this.name = name;
 		this.image = image;
 		this.country = country;
 		this.rationale = rationale;
+		this.field = field;
 	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public int getYear() {
 		return year;
@@ -86,11 +81,24 @@ public class Scientist {
 	public void setStrength(double strength) {
 		this.strength = strength;
 	}
+	
+
+	public String getField() {
+		return field;
+	}
+
+	public void setField(String field) {
+		this.field = field;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	@Override
 	public String toString() {
 		return "Scientist [id=" + id + ", year=" + year + ", name=" + name + ", image=" + image + ", country=" + country
-				+ ", rationale=" + rationale + ", strength=" + strength + "]";
+				+ ", rationale=" + rationale + ", strength=" + strength + ", field=" + field + "]";
 	}
 	
 	

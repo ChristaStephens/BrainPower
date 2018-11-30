@@ -38,5 +38,15 @@ public class ScientistDao {
 				.setParameter("regex", "%" + name.toLowerCase() + "%")
 				.getResultList();
 	}
+	
+	public List<Scientist> findByStrength(double strength) {
+		return em.createQuery("FROM Scientist WHERE strength = :strength", Scientist.class).setParameter("strength",strength)
+				.getResultList();
+	}
+	
+	public List<Scientist> findByField(String field) {
+		return em.createQuery("FROM Scientist WHERE name = :name", Scientist.class).setParameter("field", field)
+				.getResultList();
+	}
 
 }
