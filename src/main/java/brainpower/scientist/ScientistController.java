@@ -34,5 +34,12 @@ public class ScientistController {
 		ChuckResponse rep = restTemplateWithUserAgent.getForObject(url, ChuckResponse.class);
 		return new ModelAndView("index", "chuck", rep);
 	}
+	
+	@RequestMapping("/table")
+	public ModelAndView showTable() {
+		ModelAndView mv =new ModelAndView ("table");
+		return mv;
+		
+	}
 
 }
