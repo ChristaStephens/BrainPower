@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Scientist {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private int year;
 	private String image;
 	private String name;
