@@ -30,7 +30,8 @@ public class ScientistController {
 	@RequestMapping("/")
 	public ModelAndView showIndex() {
 
-		String url = "https://api.chucknorris.io/jokes/random";
+		String url = "https://api.chucknorris.io/jokes/random?category=science&category=movie&category=dev&category=food&category=celebrity&category=sport&category=fashion&category=travel"
+				+ "&category=history&category=animal&category=career&category=music&category=money";
 		ChuckResponse rep = restTemplateWithUserAgent.getForObject(url, ChuckResponse.class);
 		return new ModelAndView("index", "chuck", rep);
 	}
