@@ -9,6 +9,6 @@
 </head>
 <body>
 <h1>Chuck Quotes</h1>
-<p> ${chuck }  </p>
+<p> ${chuck.value }  </p>
 </body>
 </html>
