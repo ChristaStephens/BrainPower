@@ -1,5 +1,9 @@
 package brainpower.scientist;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -29,9 +33,26 @@ public class ScientistController {
 
 	@RequestMapping("/")
 	public ModelAndView showIndex() {
+		
+		List<String> list = new ArrayList<>();
+		list.add("money");
+		list.add("travel");
+		list.add("science");
+		list.add("sport");
+		list.add("movie");
+		list.add("celebrity");
+		list.add("career");
+		list.add("money");
+		list.add("fashion");
+		list.add("dev");
+		list.add("animal");
+		list.add("food");
+		list.add("music");
+		
+		int r = (int) (Math.random() * list.size());
+		String category = list.get(r);
 
-		String url = "https://api.chucknorris.io/jokes/random?category=science&category=movie&category=dev&category=food&category=celebrity&category=sport&category=fashion&category=travel"
-				+ "&category=history&category=animal&category=career&category=music&category=money";
+		String url = "https://api.chucknorris.io/jokes/random?category="+ category;
 		ChuckResponse rep = restTemplateWithUserAgent.getForObject(url, ChuckResponse.class);
 		return new ModelAndView("index", "chuck", rep);
 	}
