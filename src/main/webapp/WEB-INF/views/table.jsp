@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link type="text/css" rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <title>Scientist List</title>
 </head>
