@@ -101,8 +101,5 @@ public class Scientist {
 				+ ", rationale=" + rationale + ", strength=" + strength + ", field=" + field + "]";
 	}
 	
-	
-	
-	
 
 }

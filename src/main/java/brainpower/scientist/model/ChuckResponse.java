@@ -2,7 +2,8 @@ package brainpower.scientist.model;
 
 public class ChuckResponse {
 	
-	
+	//don't know if we need the id but will use
+	//${chuck.value} in jsp
 	private String id;
 	private String value;
 	

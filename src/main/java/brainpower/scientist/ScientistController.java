@@ -49,6 +49,7 @@ public class ScientistController {
 		list.add("food");
 		list.add("music");
 		
+		//pulls from the list at random
 		int r = (int) (Math.random() * list.size());
 		String category = list.get(r);
 
@@ -60,6 +61,7 @@ public class ScientistController {
 	@RequestMapping("/table")
 	public ModelAndView showTable() {
 		ModelAndView mv =new ModelAndView ("table");
+		//used this format in case we need to add objects later
 		return mv;
 		
 	}
