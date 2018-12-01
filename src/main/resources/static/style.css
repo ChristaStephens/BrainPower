@@ -1,4 +1,14 @@
 @charset "UTF-8";
+
+<!-- html tag should work but doesn't -->
+html {
+	background:
+		url("http://www.picamon.com/wp-content/uploads/2014/12/rose-background-tumblr.jpg")
+		no-repeat center fixed;
+	background-size: cover;
+	background-position: right bottom;
+}
+
 .navbar {
     overflow: hidden;
     background-color: #333;
