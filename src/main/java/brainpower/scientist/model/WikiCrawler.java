@@ -8,8 +8,8 @@ public class WikiCrawler {
 
 	public static void main(String[] args) {
 
-		//addPhysics();
-		addPeace();
+		addPhysics();
+		//addPeace();
 
 	}
 
@@ -38,13 +38,21 @@ public class WikiCrawler {
 					} catch (NullPointerException e) {
 						image = "";
 					}
+					String link;
+					try {
+						Element bioLink = row.select("th").get(1);
+						link = bioLink.absUrl("href");
+					} catch (IndexOutOfBoundsException e) {
+						link = "";
+					}
 
 					final String country = row.select("td:nth-of-type(3)").text();
 					// System.out.println("country: " + country);
 
 					final String rational = "Awarded Nobel Prize " + row.select("td:nth-of-type(4)").text();
-					 System.out.println("year: " + year + "\nimage: " + image + "\nname: " + name
-					 + "\ncountry: " + country + "\nrational: " + rational + "\n");
+					
+					System.out.println("year: " + year + "\nimage: " + image + "\nname: " + name
+					 + "\ncountry: " + country + "\nrational: " + rational + " Biolink: " + link + "\n");
 				}
 
 			}
@@ -70,7 +78,7 @@ public class WikiCrawler {
 					final String year = row.select("td:nth-of-type(1)").text();
 					final String name = row.select("td:nth-of-type(3)").text();
 					final String country = row.select("td:nth-of-type(4)").text();
-					final String rational = row.select("td:nth-of-type(5)").text();
+					final String rational = "Awarded Nobel Peace Prize " + row.select("td:nth-of-type(5)").text();
 					String image;
 					try {
 						Element img = row.select("a.image").first();
@@ -78,14 +86,21 @@ public class WikiCrawler {
 					} catch (NullPointerException e) {
 						image = "";
 					}
+					String link;
+					try {
+						Element bioLink = row.select("a").get(1);
+						link = bioLink.absUrl("href");
+					} catch (IndexOutOfBoundsException e) {
+						link = "";
+					}
 					
 					
 
 					
 					System.out.println("Year: " + year + "\nName: " 
 					+ name + "\nCountry: " + country 
-					+ "\nRational: Awarded Nobel Peace Prize " + rational + "\nImage link: " + 
-					image + "\n");
+					+ "\nRational: " + rational + "\nImage link: " + 
+					image + "\nBioLink: " + link + "\n");
 				}
 			}
 
