@@ -4,19 +4,23 @@ package brainpower.scientist;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import brainpower.scientist.dao.ScientistDao;
 import brainpower.scientist.model.ChuckResponse;
 
 
 @Controller
 public class ScientistController {
+	@Autowired ScientistDao scientistDao;
 	private RestTemplate restTemplateWithUserAgent;
 	
 	// This is an instance initialization block. It runs when a new instance of the class is created--
@@ -65,5 +69,15 @@ public class ScientistController {
 		return mv;
 		
 	}
+	
+
+	@RequestMapping("/details")
+	public ModelAndView showDetails(@RequestParam(name = "id")Long id) {
+		ModelAndView mv =new ModelAndView ("details");
+		mv.addObject("scientists", scientistDao.findById(id));
+		return mv;	
+	}
+	
+
 
 }
