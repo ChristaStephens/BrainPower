@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "scientists")
 public class Scientist {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String year;
 	private String image;
