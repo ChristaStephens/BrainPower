@@ -11,42 +11,36 @@ import org.springframework.stereotype.Repository;
 
 import brainpower.scientist.model.Scientist;
 
-
-
-
-
 @Repository
 @Transactional
 public class ScientistDao {
-	
+
 	@Autowired
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	public List<Scientist> findAll() {
-		
-		return em.createQuery("FROM Scientist", Scientist.class ).getResultList();
+
+		return em.createQuery("FROM Scientist", Scientist.class).getResultList();
 	}
-	
+
 	public Scientist findById(Long id) {
 		return em.find(Scientist.class, id);
 	}
-	
-	
+
 	public List<Scientist> findByName(String name) {
 		return em.createQuery("FROM Scientist WHERE name = :name", Scientist.class)
-				.setParameter("regex", "%" + name.toLowerCase() + "%")
-				.getResultList();
+				.setParameter("regex", "%" + name.toLowerCase() + "%").getResultList();
 	}
-	
+
 	public List<Scientist> findByStrength(double strength) {
-		return em.createQuery("FROM Scientist WHERE strength = :strength", Scientist.class).setParameter("strength",strength)
-				.getResultList();
+		return em.createQuery("FROM Scientist WHERE strength = :strength", Scientist.class)
+				.setParameter("strength", strength).getResultList();
 	}
-	
+
 	public List<Scientist> findByField(String field) {
-		return em.createQuery("FROM Scientist WHERE name = :name", Scientist.class).setParameter("field", field)
-				.getResultList();
+		return em.createQuery("FROM Scientist WHERE LOWER(field) LIKE :regex", Scientist.class)
+				.setParameter("regex", "%" + field.toLowerCase() + "%").getResultList();
 	}
 
 }
