@@ -16,11 +16,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import brainpower.scientist.dao.ScientistDao;
 import brainpower.scientist.model.ChuckResponse;
+import brainpower.scientist.model.Scientist;
+import brainpower.scientist.model.WikiCrawler;
 
 
 @Controller
 public class ScientistController {
 	@Autowired ScientistDao scientistDao;
+	@Autowired WikiCrawler wikiCrawler;
 	private RestTemplate restTemplateWithUserAgent;
 	
 	// This is an instance initialization block. It runs when a new instance of the class is created--
@@ -81,6 +84,23 @@ public class ScientistController {
 		mv.addObject("scientists", scientistDao.findById(id));
 		return mv;	
 	}
+	
+//	@RequestMapping("/load")
+//	public ModelAndView load() {
+//		List<Scientist> p = WikiCrawler.addPeace();
+//		for(Scientist s : p) {
+//			scientistDao.create(s);
+//		}
+////		List<Scientist> w = WikiCrawler.addWomen();
+////		for(Scientist s : w) {
+////			scientistDao.create(s);
+////		}
+////		List<Scientist> y = WikiCrawler.addPhysics();
+////		for(Scientist s : y) {
+////			scientistDao.create(s);
+////		}
+//		return new ModelAndView("redirect:/");
+//	}
 	
 
 

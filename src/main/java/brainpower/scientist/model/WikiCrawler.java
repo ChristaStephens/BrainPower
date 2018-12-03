@@ -6,16 +6,16 @@ import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import brainpower.scientist.dao.ScientistDao;
+
+@Component
 public class WikiCrawler {
+	@Autowired
+	private static ScientistDao scientistdao;
 
-	public static void main(String[] args) {
-
-		addPhysics();
-		addPeace();
-		addWomen();
-
-	}
 
 	public static List<Scientist> addPhysics() {
 		String url = "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics";
@@ -55,12 +55,13 @@ public class WikiCrawler {
 					// System.out.println("country: " + country);
 
 					final String rational = "Awarded Nobel Prize in Physics " + row.select("td:nth-of-type(4)").text();
-
 					
-					if (image.length() > 0 && name.length() > 0 && link.length() > 0 && 
-							  year.length() > 0 && rational.length() > 0) {
+					if (image.length() > 0 && name.length() > 0 && link.length() > 0 && year.length() > 0
+							&& rational.length() > 0) {
 						Scientist s = new Scientist(year, name, image, country, rational, "Physics", link);
+						if (list.size() < 25) {
 						list.add(s);
+						}
 					}
 				}
 
@@ -106,10 +107,12 @@ public class WikiCrawler {
 						link = "";
 					}
 
-					if (image.length() > 0 && name.length() > 0 && link.length() > 0 && 
-							  year.length() > 0 && rational.length() > 0) {
+					if (image.length() > 0 && name.length() > 0 && link.length() > 0 && year.length() > 0
+							&& rational.length() > 0) {
 						Scientist s = new Scientist(year, name, image, country, rational, "Philanthropy", link);
+						if(list.size() < 25) {
 						list.add(s);
+						}
 					}
 
 				}
@@ -120,13 +123,14 @@ public class WikiCrawler {
 		}
 		System.out.println("peace: " + list.size());
 		return list;
+		
 
 	}
 
 	public static List<Scientist> addWomen() {
 		String url = "https://en.wikipedia.org/wiki/List_of_African-American_women_in_STEM_fields";
 		List<Scientist> list = new ArrayList<>();
-		
+
 		try {
 
 			final Document doc = Jsoup.connect(url).get();
@@ -150,11 +154,9 @@ public class WikiCrawler {
 				String field = row.select("td:nth-of-type(3)").text();
 				String year = row.select("td:nth-of-type(4)").text();
 				String rational = row.select("td:nth-of-type(5)").text();
-				
-				
-				
-				if (image.length() > 0 && name.length() > 0 && link.length() > 0 && 
-						field.length() > 0 && year.length() > 0 && rational.length() > 0) {
+
+				if (image.length() > 0 && name.length() > 0 && link.length() > 0 && field.length() > 0
+						&& year.length() > 0 && rational.length() > 0) {
 					Scientist s = new Scientist(year, name, image, "United States", rational, field, link);
 					list.add(s);
 				}
@@ -164,7 +166,8 @@ public class WikiCrawler {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Women: " + list.size());
+		
+		
 		return list;
 
 	}
