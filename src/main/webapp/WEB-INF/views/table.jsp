@@ -23,7 +23,7 @@
 		</div>
 	</div>
 
-	<table id="science">
+	<table class="tabledata" id="science">
 		<tr>
 
 			<th>Year</th>
@@ -32,9 +32,11 @@
 			<th>Country</th>
 			<th>Rationale</th>
 			<th>Profession</th>
+			<th>Strength</th>
 		</tr>
 		<c:forEach var="science" items="scientist">
 			<tr>
+				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
