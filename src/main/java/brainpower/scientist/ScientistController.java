@@ -70,8 +70,7 @@ public class ScientistController {
 		
 	}
 	
-<<<<<<< HEAD
-=======
+
 	@RequestMapping("/details")
 	public ModelAndView showDetails(@RequestParam(name = "id")Long id) {
 		ModelAndView mv =new ModelAndView ("details");
@@ -80,5 +79,5 @@ public class ScientistController {
 	}
 	
 
->>>>>>> 516a414f3dfc88bcd87a379eea94c5247b2e8e3d
+
 }
