@@ -59,7 +59,11 @@ public class ScientistController {
 
 		String url = "https://api.chucknorris.io/jokes/random?category="+ category;
 		ChuckResponse rep = restTemplateWithUserAgent.getForObject(url, ChuckResponse.class);
-		return new ModelAndView("index", "chuck", rep);
+		ModelAndView mv =new ModelAndView ("index");
+		//may have to change the "1l" reads as a long
+		mv.addObject("sci", scientistDao.findById(1l));
+		mv.addObject("chuck", rep);
+		return mv;
 	}
 	
 	@RequestMapping("/table")
