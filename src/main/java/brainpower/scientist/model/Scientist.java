@@ -13,7 +13,7 @@ public class Scientist {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private int year;
+	private String year;
 	private String image;
 	private String name;
 	private String country;
@@ -24,7 +24,7 @@ public class Scientist {
 	
 	public Scientist() {}
 	
-	public Scientist(int year, String name, String image, String country, 
+	public Scientist(String year, String name, String image, String country, 
 			String rationale, String field, String bioLink) {
 		super();
 		this.year = year;
@@ -44,11 +44,11 @@ public class Scientist {
 		this.bioLink = bioLink;
 	}
 
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
 
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 
