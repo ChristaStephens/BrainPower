@@ -85,7 +85,7 @@
 
 	<script type="text/javascript">
 		function alertName() {
-			alert("insert chuck joke");
+			alert("${chuck.value}");
 		}
 	</script>
 
