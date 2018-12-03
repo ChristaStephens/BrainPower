@@ -40,7 +40,7 @@ public class WikiCrawler {
 					}
 					String link;
 					try {
-						Element bioLink = row.select("th").get(1);
+						Element bioLink = row.select("a").get(1);
 						link = bioLink.absUrl("href");
 					} catch (IndexOutOfBoundsException e) {
 						link = "";
@@ -52,7 +52,7 @@ public class WikiCrawler {
 					final String rational = "Awarded Nobel Prize " + row.select("td:nth-of-type(4)").text();
 					
 					System.out.println("year: " + year + "\nimage: " + image + "\nname: " + name
-					 + "\ncountry: " + country + "\nrational: " + rational + " Biolink: " + link + "\n");
+					 + "\ncountry: " + country + "\nrational: " + rational + "\nBiolink: " + link + "\n");
 				}
 
 			}

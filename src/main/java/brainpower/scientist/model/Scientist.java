@@ -24,7 +24,8 @@ public class Scientist {
 	
 	public Scientist() {}
 	
-	public Scientist(int year, String name, String image, String country, String rationale, String field, String bioLink) {
+	public Scientist(int year, String name, String image, String country, 
+			String rationale, String field, String bioLink) {
 		super();
 		this.year = year;
 		this.name = name;
