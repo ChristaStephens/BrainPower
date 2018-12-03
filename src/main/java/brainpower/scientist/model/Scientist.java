@@ -20,10 +20,11 @@ public class Scientist {
 	private String rationale;
 	private double strength;
 	private String field;
+	private String bioLink;
 	
 	public Scientist() {}
-
-	public Scientist(int year, String name, String image, String country, String rationale, String field) {
+	
+	public Scientist(int year, String name, String image, String country, String rationale, String field, String bioLink) {
 		super();
 		this.year = year;
 		this.name = name;
@@ -31,8 +32,16 @@ public class Scientist {
 		this.country = country;
 		this.rationale = rationale;
 		this.field = field;
+		this.bioLink = bioLink;
+	}
+	
+	public String getBioLink() {
+		return bioLink;
 	}
 
+	public void setBioLink(String bioLink) {
+		this.bioLink = bioLink;
+	}
 
 	public int getYear() {
 		return year;
