@@ -27,13 +27,8 @@
 			<div class="dropdown-content">
 				<a href="/table">Scientist</a>
 			</div>
-
-
-
 		</div>
-
-		<br>
-
+		<a href="/">About</a>
 	</div>
 	<button class="button" style="vertical-align: middle">
 		<span><a href="/">Next Scientist</a></span>
@@ -56,28 +51,29 @@
 	<div class="container" style="text-align: center; width: 100%;">
 
 		<h1>How Strong?</h1>
-		<form>
+		<form action="submit">
 			Weakling<label class="radio-inline"> <input type="radio"
-				name="optradio" checked>
+				name="optradio" value="1" checked>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio">2
+				name="optradio" value="2">2
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio">3
+				name="optradio" value="3">3
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio">4
+				name="optradio" value="4">4
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio">5
+				name="optradio" value="5">5
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio">6
+				name="optradio" value="6">6
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio">7
+				name="optradio" value="7">7
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio">8
+				name="optradio" value="8">8
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio">9
+				name="optradio" value="9">9
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio">Chuck Norris.
-			</label>
+				name="optradio" value="10">Chuck Norris.
+			</label> 
+			<input type="hidden" name="scientistID" value="${scientist.id }">
 		</form>
 	</div>
 
