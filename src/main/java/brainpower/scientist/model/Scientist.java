@@ -1,17 +1,24 @@
 package brainpower.scientist.model;
 
 
+import java.util.Set;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name = "scientists")
 public class Scientist {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "scientist_id")
 	private Long id;
 	private String year;
 	private String image;
@@ -20,7 +27,11 @@ public class Scientist {
 	private String rationale;
 	private Double strength;
 	private String field;
+	@Column(name = "bio_link")
 	private String bioLink;
+	
+	@OneToMany(mappedBy = "scientist")
+	private Set<Review> reviews;
 	
 	public Scientist() {}
 	
