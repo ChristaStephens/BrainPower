@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import brainpower.scientist.dao.ScientistDao;
 import brainpower.scientist.model.ChuckResponse;
 import brainpower.scientist.model.Scientist;
+import brainpower.scientist.model.StringParser;
 import brainpower.scientist.model.WikiCrawler;
 
 
@@ -67,9 +68,11 @@ public class ScientistController {
 		
 		List<Scientist> scientists = scientistDao.findAll();
 		int s = (int) (Math.random() * scientists.size());
+		
+		String fact = StringParser.parseString(rep.getValue(), scientists.get(s).getName());
 
 		mv.addObject("scientist", scientists.get(s));
-		mv.addObject("chuck", rep);
+		mv.addObject("fact", fact);
 		return mv;
 	}
 	

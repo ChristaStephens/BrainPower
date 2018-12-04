@@ -43,7 +43,7 @@
 			<img src="${scientist.image }" />
 		</p>
 	</h1>
-	<h1>${chuck.value }</h1>
+	<h1>${fact}</h1>
 	<!-- Scientist strength rating -->
 	<div class="container" style="text-align: center; width: 100%;">
 
