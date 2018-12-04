@@ -179,3 +179,65 @@ th {
 	 width:25px;
   	height:25px;
 }
+
+#share{
+	margin-left: 455px;
+	margin-top: 110px;
+}
+
+.container {
+    position: center;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: center;
+  text-align:center;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  display: block;
+  margin-left: 599px;
+  margin-right: auto;
+  margin-top: 1%;
+  width: 40%;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  margin-bottom: 20px;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+b{
+	text-color: white;
+}
+
+.containerform{
+	
+	position: relative;
+    top: 100px;
+    
+}
+
