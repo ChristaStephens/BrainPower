@@ -22,6 +22,22 @@
 			</div>
 		</div>
 	</div>
+	<div>
+		<form action="/table-country">
+			<select id="country" name="country">
+				<option value="">Filter By Country</option>
+				<c:forEach items="${ allCountries }" var="c">
+					<option <c:if test="${ c eq param.country }">selected</c:if>>${ c }</option>
+				</c:forEach>
+			</select>
+
+			<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
+			<c:if test="${not empty param.country}">
+				<%-- c:if determines whether its contents should show or not --%>
+				<a href="/table" class="btn btn-secondary mb-2">Clear</a>
+			</c:if>
+		</form>
+	</div>
 
 	<table class="tabledata" id="science">
 		<tr>
@@ -39,10 +55,11 @@
 
 
 
+
 			</tr>
 		</c:forEach>
-	</table>
 
+	</table>
 
 
 </body>

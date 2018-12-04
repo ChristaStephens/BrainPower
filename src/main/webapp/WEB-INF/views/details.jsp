@@ -41,7 +41,7 @@
 				<td>${scientist.field }</td>
 				<td>${scientist.country }</td>
 				<td>${scientist.rationale }</td>
-				<td><a href = "${scientist.bioLink}">BioLink</a></td>
+				<td><a href = "${scientist.bioLink}" target="_blank">BioLink</a></td>
 			
 
 
