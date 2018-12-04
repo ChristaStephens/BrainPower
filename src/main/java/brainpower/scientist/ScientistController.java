@@ -73,14 +73,10 @@ public class ScientistController {
 		int s = (int) (Math.random() * scientists.size());
 		
 		String fact = StringParser.parseString(rep.getValue(), scientists.get(s).getName());
-
 		mv.addObject("scientist", scientists.get(s));
-<<<<<<< HEAD
 		mv.addObject("chuck", rep);
 		mv.addObject("strength",strength);
-=======
 		mv.addObject("fact", fact);
->>>>>>> 31d48a8a85ebd9b84b214f7e4fdb523a92c3eb85
 		return mv;
 	}
 	
