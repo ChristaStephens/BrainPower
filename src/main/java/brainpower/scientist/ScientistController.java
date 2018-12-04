@@ -21,6 +21,7 @@ import brainpower.scientist.model.WikiCrawler;
 
 
 
+
 @Controller
 public class ScientistController {
 	@Autowired ScientistDao scientistDao;
@@ -76,9 +77,19 @@ public class ScientistController {
 	@RequestMapping("/table")
 	public ModelAndView showTable() {
 		List<Scientist> list = scientistDao.findByStrength();
-		return new ModelAndView("table", "scientists", list);
-		
+		ModelAndView mv= new ModelAndView("table", "scientists", list);
+		mv.addObject("allCountries", scientistDao.findAllCountries());
+		return mv;
 	}
+	
+	@RequestMapping("/table-country")
+	public ModelAndView filterByCountry(@RequestParam(name = "country", 
+	required = false)String country) {
+		 List<Scientist> list = scientistDao.findByCountry(country);
+		 return new ModelAndView("table", "scientists", list);
+	}
+	
+
 	
 
 	@RequestMapping("/details")
