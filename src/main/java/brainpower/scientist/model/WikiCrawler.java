@@ -15,6 +15,10 @@ import brainpower.scientist.dao.ScientistDao;
 public class WikiCrawler {
 	@Autowired
 	private static ScientistDao scientistdao;
+	
+	public static void main(String[] args) {
+		addPeace();
+	}
 
 
 	public static List<Scientist> addPhysics() {
@@ -38,11 +42,12 @@ public class WikiCrawler {
 					final String name = row.select("th").text();
 					String image;
 					try {
-						Element img = row.select("a.image").first();
-						image = img.absUrl("href");
+						Element img = row.select("img").first();
+						image = img.absUrl("src");
 					} catch (NullPointerException e) {
 						image = "";
 					}
+					
 					String link;
 					try {
 						Element bioLink = row.select("a").get(1);
@@ -94,8 +99,8 @@ public class WikiCrawler {
 					final String rational = "Awarded Nobel Peace Prize " + row.select("td:nth-of-type(5)").text();
 					String image;
 					try {
-						Element img = row.select("a.image").first();
-						image = img.absUrl("href");
+						Element img = row.select("img").first();
+						image = img.absUrl("src");
 					} catch (NullPointerException e) {
 						image = "";
 					}
@@ -138,8 +143,8 @@ public class WikiCrawler {
 			for (Element row : doc.select("table.wikitable tbody tr")) {
 				String image;
 				try {
-					Element img = row.select("a.image").first();
-					image = img.absUrl("href");
+					Element img = row.select("img").first();
+					image = img.absUrl("src");
 				} catch (NullPointerException e) {
 					image = "";
 				}
