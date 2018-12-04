@@ -42,5 +42,9 @@ public class ScientistDao {
 		return em.createQuery("FROM Scientist WHERE LOWER(field) LIKE :regex", Scientist.class)
 				.setParameter("regex", "%" + field.toLowerCase() + "%").getResultList();
 	}
+	
+	public void create(Scientist scientist) {
+		em.persist(scientist);
+	}
 
 }

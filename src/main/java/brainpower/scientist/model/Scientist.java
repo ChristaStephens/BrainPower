@@ -18,7 +18,7 @@ public class Scientist {
 	private String name;
 	private String country;
 	private String rationale;
-	private double strength;
+	private Double strength;
 	private String field;
 	private String bioLink;
 	
@@ -36,6 +36,12 @@ public class Scientist {
 		this.bioLink = bioLink;
 	}
 	
+
+	
+	public Long getId() {
+		return id;
+	}
+
 	public String getBioLink() {
 		return bioLink;
 	}
@@ -84,11 +90,11 @@ public class Scientist {
 		this.rationale = rationale;
 	}
 
-	public double getStrength() {
+	public Double getStrength() {
 		return strength;
 	}
 
-	public void setStrength(double strength) {
+	public void setStrength(Double strength) {
 		this.strength = strength;
 	}
 	
