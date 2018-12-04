@@ -81,17 +81,24 @@
 		</form>
 	</div>
 
-
-
-	<script type="text/javascript">
-		function alertName() {
-			alert("${chuck.value}");
-		}
-	</script>
-
-	<script type="text/javascript">
-		window.onload = alertName;
-	</script>
+	
+	<p> blank text, left empty on purpose</p>
+	
+	<button onclick="myFunction()">Is this Scientist Stronger Than Chuck?</button>
+	
+	<p id="demo"></p>
+	<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Are you nuts, the Norse Gods are named after Chuck Norris. No one is stronger than Chuck!";
+}
+</script>
+	
+	
+	
+	
+	
+	
+	
 
 
 </body>

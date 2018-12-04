@@ -85,22 +85,22 @@ public class ScientistController {
 		return mv;	
 	}
 	
-//	@RequestMapping("/load")
-//	public ModelAndView load() {
+	@RequestMapping("/load")
+	public ModelAndView load() {
 //		List<Scientist> p = WikiCrawler.addPeace();
 //		for(Scientist s : p) {
 //			scientistDao.create(s);
 //		}
-////		List<Scientist> w = WikiCrawler.addWomen();
-////		for(Scientist s : w) {
-////			scientistDao.create(s);
-////		}
-////		List<Scientist> y = WikiCrawler.addPhysics();
-////		for(Scientist s : y) {
-////			scientistDao.create(s);
-////		}
-//		return new ModelAndView("redirect:/");
-//	}
+		List<Scientist> w = WikiCrawler.addWomen();
+		for(Scientist s : w) {
+			scientistDao.create(s);
+		}
+//		List<Scientist> y = WikiCrawler.addPhysics();
+//		for(Scientist s : y) {
+//			scientistDao.create(s);
+//		}
+		return new ModelAndView("redirect:/");
+	}
 	
 
 
