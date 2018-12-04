@@ -39,7 +39,19 @@
 	</button>
 
 
+<<<<<<< HEAD
 
+=======
+	<h1>
+		<p>
+			<img src="${scientist.image }" />
+		</p>
+	</h1>
+	<h1>${fact}</h1>
+
+
+	
+>>>>>>> 31d48a8a85ebd9b84b214f7e4fdb523a92c3eb85
 
 	<div class="container">
 		<img src="${scientist.image }" alt="Avatar" class="image"
