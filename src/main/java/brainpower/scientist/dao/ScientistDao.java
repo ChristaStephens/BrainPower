@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import brainpower.scientist.model.Scientist;
 
+
 @Repository
 @Transactional
 public class ScientistDao {
@@ -46,5 +47,7 @@ public class ScientistDao {
 	public void create(Scientist scientist) {
 		em.persist(scientist);
 	}
+	
+
 
 }

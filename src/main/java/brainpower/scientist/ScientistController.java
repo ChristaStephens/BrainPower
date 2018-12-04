@@ -95,10 +95,10 @@ public class ScientistController {
 ////		for(Scientist s : p) {
 ////			scientistDao.create(s);
 ////		}
-//		List<Scientist> w = WikiCrawler.addWomen();
-//		for(Scientist s : w) {
-//			scientistDao.create(s);
-//		}
+////		List<Scientist> w = WikiCrawler.addWomen();
+////		for(Scientist s : w) {
+////			scientistDao.create(s);
+////		}
 ////		List<Scientist> y = WikiCrawler.addPhysics();
 ////		for(Scientist s : y) {
 ////			scientistDao.create(s);

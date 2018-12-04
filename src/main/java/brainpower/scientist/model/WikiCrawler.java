@@ -16,9 +16,6 @@ public class WikiCrawler {
 	@Autowired
 	private static ScientistDao scientistdao;
 	
-	public static void main(String[] args) {
-		addPeace();
-	}
 
 
 	public static List<Scientist> addPhysics() {

@@ -33,7 +33,7 @@
 		<c:forEach var="s" items="${scientists }">
 			<tr>
 
-				<td><a href="/details?id=${s.id}">${s.name }</a></td>
+				<td><a href="/details?id=${s.id}" >${s.name }</a></td>
 
 				<td>${s.strength}</td>
 
