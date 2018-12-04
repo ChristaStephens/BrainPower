@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="navbar">
+	<div class="navbar">
 		<a href="/">Home</a>
 
 		<div class="dropdown">
@@ -26,30 +26,24 @@
 	<table class="tabledata" id="science">
 		<tr>
 
-			<th>Year</th>
-			<th><a href="/details?id=${id }">Name</a></th>
-			<th>Field</th>
-			<th>Country</th>
-			<th>Rationale</th>
-			<th>Profession</th>
+
+			<th>Name</th>
 			<th>Strength</th>
 		</tr>
-		<c:forEach var="science" items="scientist">
+		<c:forEach var="s" items="${scientists }">
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+
+				<td><a href="/details?id=${s.id}">${s.name }</a></td>
+
+				<td>${s.strength}</td>
+
 
 
 			</tr>
 		</c:forEach>
 	</table>
-	
-	
+
+
 
 </body>
 </html>

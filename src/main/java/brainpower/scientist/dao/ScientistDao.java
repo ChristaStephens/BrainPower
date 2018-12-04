@@ -33,9 +33,9 @@ public class ScientistDao {
 				.setParameter("regex", "%" + name.toLowerCase() + "%").getResultList();
 	}
 
-	public List<Scientist> findByStrength(double strength) {
-		return em.createQuery("FROM Scientist WHERE strength = :strength", Scientist.class)
-				.setParameter("strength", strength).getResultList();
+	public List<Scientist> findByStrength() {
+		return em.createQuery("FROM Scientist ORDER BY strength DESC", Scientist.class)
+				.getResultList();
 	}
 
 	public List<Scientist> findByField(String field) {
