@@ -23,6 +23,7 @@ import brainpower.scientist.model.WikiCrawler;
 
 
 
+
 @Controller
 public class ScientistController {
 	@Autowired ScientistDao scientistDao;
@@ -101,6 +102,7 @@ public class ScientistController {
 		mv.addObject("scientist", scientistDao.findById(id));
 		return mv;	
 	}
+	
 
 	
 //	@RequestMapping("/load")

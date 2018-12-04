@@ -22,5 +22,9 @@ public class ReviewDao {
 		return em.createQuery("FROM Review where scientist =: scientist")
 				.setParameter("scientist", id).getResultList();
 	}
+	
+	public void create( Review review) {
+		em.persist(review);
+	}
 
 }
