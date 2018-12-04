@@ -20,6 +20,7 @@ import brainpower.scientist.model.Scientist;
 import brainpower.scientist.model.WikiCrawler;
 
 
+
 @Controller
 public class ScientistController {
 	@Autowired ScientistDao scientistDao;
@@ -71,9 +72,8 @@ public class ScientistController {
 	
 	@RequestMapping("/table")
 	public ModelAndView showTable() {
-		ModelAndView mv =new ModelAndView ("table");
-		//used this format in case we need to add objects later
-		return mv;
+		List<Scientist> list = scientistDao.findByStrength();
+		return new ModelAndView("table", "scientists", list);
 		
 	}
 	
@@ -81,26 +81,27 @@ public class ScientistController {
 	@RequestMapping("/details")
 	public ModelAndView showDetails(@RequestParam(name = "id")Long id) {
 		ModelAndView mv =new ModelAndView ("details");
-		mv.addObject("scientists", scientistDao.findById(id));
+		mv.addObject("scientist", scientistDao.findById(id));
 		return mv;	
 	}
+
 	
-	@RequestMapping("/load")
-	public ModelAndView load() {
-//		List<Scientist> p = WikiCrawler.addPeace();
-//		for(Scientist s : p) {
+//	@RequestMapping("/load")
+//	public ModelAndView load() {
+////		List<Scientist> p = WikiCrawler.addPeace();
+////		for(Scientist s : p) {
+////			scientistDao.create(s);
+////		}
+//		List<Scientist> w = WikiCrawler.addWomen();
+//		for(Scientist s : w) {
 //			scientistDao.create(s);
 //		}
-		List<Scientist> w = WikiCrawler.addWomen();
-		for(Scientist s : w) {
-			scientistDao.create(s);
-		}
-//		List<Scientist> y = WikiCrawler.addPhysics();
-//		for(Scientist s : y) {
-//			scientistDao.create(s);
-//		}
-		return new ModelAndView("redirect:/");
-	}
+////		List<Scientist> y = WikiCrawler.addPhysics();
+////		for(Scientist s : y) {
+////			scientistDao.create(s);
+////		}
+//		return new ModelAndView("redirect:/");
+//	}
 	
 
 
