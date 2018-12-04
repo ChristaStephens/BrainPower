@@ -30,8 +30,8 @@ public class Scientist {
 	@Column(name = "bio_link")
 	private String bioLink;
 	
-	@OneToMany(mappedBy = "scientist")
-	private Set<Review> reviews;
+//	@OneToMany(mappedBy = "scientist")
+//	private Set<Review> reviews;
 	
 	public Scientist() {}
 	
