@@ -63,8 +63,11 @@ public class ScientistController {
 		String url = "https://api.chucknorris.io/jokes/random?category="+ category;
 		ChuckResponse rep = restTemplateWithUserAgent.getForObject(url, ChuckResponse.class);
 		ModelAndView mv =new ModelAndView ("index");
-		//may have to change the "1l" reads as a long
-		mv.addObject("sci", scientistDao.findById(1l));
+		
+		List<Scientist> scientists = scientistDao.findAll();
+		int s = (int) (Math.random() * scientists.size());
+
+		mv.addObject("scientist", scientists.get(s));
 		mv.addObject("chuck", rep);
 		return mv;
 	}
