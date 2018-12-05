@@ -38,24 +38,17 @@
 		<span><a href="/">Next Scientist</a></span>
 	</button>
 
-
-	
-
-	<div class="container">
-		<img src="${scientist.image }" alt="Avatar" class="image"
-			style="width: 30%">
-		<div class="middle">
-			<div class="text">${chuck.value }</div>
-		</div>
-	</div>
-
-	
-
-
+	<h1>
+		<p>
+			<img class="scientist" src="${scientist.image }">
+		</p>
+		<H8>Fact:</H8>
+	</h1>
+	<h1>${chuck.value }</h1>
 	<!-- Scientist strength rating -->
-	<div class="containerform" style="text-align: center; width: 100%;">
+	<div class="container" style="text-align: center; width: 100%;">
 
-		
+		<h1>How Strong?</h1>
 		<form action="submit">
 			<b>Weakling</b> <label class="radio-inline"> <input
 				type="radio" name="optradio" value="1" checked>
