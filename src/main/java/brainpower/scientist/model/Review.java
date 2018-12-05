@@ -15,7 +15,7 @@ public class Review {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id;
-		private Double strength;
+		private Integer strength;
 		
 		@ManyToOne
 		@JoinColumn(name = "scientist_id")
@@ -29,11 +29,11 @@ public class Review {
 			this.id = id;
 		}
 
-		public Double getStrength() {
+		public Integer getStrength() {
 			return strength;
 		}
 
-		public void setStrength(Double strength) {
+		public void setStrength(Integer strength) {
 			this.strength = strength;
 		}
 
