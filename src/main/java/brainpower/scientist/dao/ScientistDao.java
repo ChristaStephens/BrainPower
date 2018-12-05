@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import brainpower.scientist.model.Scientist;
 
+
 @Repository
 @Transactional
 public class ScientistDao {
@@ -60,6 +61,10 @@ public class ScientistDao {
 		// Convert the List to a Set.
 		return new TreeSet<>(countryList);
 
+	}
+	
+	public void update(Scientist scientist) {
+		em.merge(scientist);
 	}
 
 }
