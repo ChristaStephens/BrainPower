@@ -22,23 +22,46 @@
 			</div>
 		</div>
 	</div>
-	<div>
-		<form action="/table-country">
-			<select id="country" name="country">
-				<option value="">Filter By Country</option>
-				<c:forEach items="${ allCountries }" var="c">
-					<option <c:if test="${ c eq param.country }">selected</c:if>>${ c }</option>
-				</c:forEach>
-			</select>
+	<div id="filters">
+		<div>
+			<form action="/table-country">
+				<select id="country" name="country">
+					<option value="">Filter By Country</option>
+					<c:forEach items="${ allCountries }" var="c">
+						<option>${ c }</option>
+					</c:forEach>
+				</select>
 
-			<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
-			<c:if test="${not empty param.country}">
-				<%-- c:if determines whether its contents should show or not --%>
-				<a href="/table" class="btn btn-secondary mb-2">Clear</a>
-			</c:if>
-		</form>
+				<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
+			</form>
+		</div>
+		<div>
+			<form action="/table-field">
+				<select id="field" name="field">
+					<option value="">Filter By Field</option>
+					<c:forEach items="${ fields }" var="f">
+						<option>${ f }</option>
+					</c:forEach>
+				</select>
+
+				<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
+
+			</form>
+		</div>
+		<div>
+			<form action="/table-show-all-high">
+				<button>Show all high-low</button>
+			</form>
+		</div>
+		<div>
+			<form action="/table-show-all-low">
+				<button>Show all low-high</button>
+			</form>
+		</div>
+		<div>
+			<a href="/table">Clear Filter</a>
+		</div>
 	</div>
-
 	<table class="tabledata" id="science">
 		<tr>
 

@@ -44,6 +44,15 @@ public class ScientistDao {
 	public List<Scientist> findByStrength() {
 		return em.createQuery("FROM Scientist ORDER BY strength DESC", Scientist.class).getResultList();
 	}
+	
+	public List<Scientist> findByWeakness() {
+		return em.createQuery("FROM Scientist ORDER BY strength ASC", Scientist.class).getResultList();
+	}
+	
+	public List<Scientist> findNumber() {
+		return em.createQuery("FROM Scientist ORDER BY strength DESC", Scientist.class).setMaxResults(15).getResultList();
+		
+	}
 
 	public List<Scientist> findByField(String field) {
 		return em.createQuery("FROM Scientist WHERE LOWER(field) LIKE :regex", Scientist.class)
@@ -60,6 +69,15 @@ public class ScientistDao {
 				.getResultList();
 		// Convert the List to a Set.
 		return new TreeSet<>(countryList);
+
+	}
+	
+	public Set<String> findAllFields() {
+		// This query returns a list of Strings
+		List<String> fieldList = em.createQuery("SELECT DISTINCT field FROM Scientist", String.class)
+				.getResultList();
+		// Convert the List to a Set.
+		return new TreeSet<>(fieldList);
 
 	}
 	

@@ -82,9 +82,10 @@ public class ScientistController {
 	
 	@RequestMapping("/table")
 	public ModelAndView showTable() {
-		List<Scientist> list = scientistDao.findByStrength();
+		List<Scientist> list = scientistDao.findNumber();
 		ModelAndView mv= new ModelAndView("table", "scientists", list);
 		mv.addObject("allCountries", scientistDao.findAllCountries());
+		mv.addObject("fields", scientistDao.findAllFields());
 		return mv;
 	}
 	
@@ -92,6 +93,25 @@ public class ScientistController {
 	public ModelAndView filterByCountry(@RequestParam(name = "country", 
 	required = false)String country) {
 		 List<Scientist> list = scientistDao.findByCountry(country);
+		 return new ModelAndView("table", "scientists", list);
+	}
+	
+	@RequestMapping("/table-field")
+	public ModelAndView filterByField(@RequestParam(name = "field", 
+	required = false)String field) {
+		 List<Scientist> list = scientistDao.findByField(field);
+		 return new ModelAndView("table", "scientists", list);
+	}
+	
+	@RequestMapping("/table-show-all-high")
+	public ModelAndView showAllHigh() {
+		 List<Scientist> list = scientistDao.findByStrength();
+		 return new ModelAndView("table", "scientists", list);
+	}
+	
+	@RequestMapping("/table-show-all-low")
+	public ModelAndView showAllLow() {
+		 List<Scientist> list = scientistDao.findByWeakness();
 		 return new ModelAndView("table", "scientists", list);
 	}
 	
