@@ -34,6 +34,7 @@
 		</div>
 		<a href="/">About</a>
 	</div>
+	<form action="submit">
 	<button class="button" style="vertical-align: middle">
 		<span><a href="/">Next Scientist</a></span>
 	</button>
@@ -50,7 +51,7 @@
 
 		<h1>How Strong?</h1>
 
-		<form action="submit">
+		
 			<b>Weakling</b> <label class="radio-inline"> <input
 				type="radio" name="strength" value="1" checked>
 			</label> <label class="radio-inline"> <input type="radio"

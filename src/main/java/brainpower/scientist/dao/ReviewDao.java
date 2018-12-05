@@ -18,6 +18,7 @@ public class ReviewDao {
 	@PersistenceContext
 	private EntityManager em;
 	
+	//strength of the scientist
 	public List<Review> findById(Long id) {
 		return em.createQuery("FROM Review where scientist =: scientist")
 				.setParameter("scientist", id).getResultList();

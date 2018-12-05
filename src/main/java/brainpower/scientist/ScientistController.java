@@ -44,7 +44,7 @@ public class ScientistController {
 
 	@RequestMapping("/")
 	//change "required" to "true" when table is mapped.
-	public ModelAndView showIndex( @RequestParam (name= "strength", required =false) String strength) {
+	public ModelAndView showIndex( ) {
 		
 		List<String> list = new ArrayList<>();
 		list.add("money");
@@ -75,7 +75,6 @@ public class ScientistController {
 		String fact = StringParser.parseString(rep.getValue(), scientists.get(s).getName());
 		mv.addObject("scientist", scientists.get(s));
 		mv.addObject("chuck", rep);
-		mv.addObject("strength",strength);
 		mv.addObject("fact", fact);
 		return mv;
 	}
@@ -126,6 +125,15 @@ public class ScientistController {
 	}
 	
 
+	@RequestMapping("/submit")
+	public ModelAndView submit(@RequestParam (name= "strength", required =true) String strength) {
+	ModelAndView mv =new ModelAndView ("redirect:/");
+	mv.addObject("strength",strength);
+	System.out.println("hey boo");
+	return mv;
+	
+	}
+	
 	
 //	@RequestMapping("/load")
 //	public ModelAndView load() {
