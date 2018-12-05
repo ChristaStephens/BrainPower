@@ -17,7 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 import brainpower.scientist.dao.ScientistDao;
 import brainpower.scientist.model.ChuckResponse;
 import brainpower.scientist.model.Scientist;
+import brainpower.scientist.model.StringParser;
 import brainpower.scientist.model.WikiCrawler;
+
 
 
 
@@ -41,7 +43,8 @@ public class ScientistController {
 	}
 
 	@RequestMapping("/")
-	public ModelAndView showIndex() {
+	//change "required" to "true" when table is mapped.
+	public ModelAndView showIndex( @RequestParam (name= "strength", required =false) String strength) {
 		
 		List<String> list = new ArrayList<>();
 		list.add("money");
@@ -68,9 +71,12 @@ public class ScientistController {
 		
 		List<Scientist> scientists = scientistDao.findAll();
 		int s = (int) (Math.random() * scientists.size());
-
+		
+		String fact = StringParser.parseString(rep.getValue(), scientists.get(s).getName());
 		mv.addObject("scientist", scientists.get(s));
 		mv.addObject("chuck", rep);
+		mv.addObject("strength",strength);
+		mv.addObject("fact", fact);
 		return mv;
 	}
 	
@@ -98,25 +104,25 @@ public class ScientistController {
 		mv.addObject("scientist", scientistDao.findById(id));
 		return mv;	
 	}
+	
 
 	
 //	@RequestMapping("/load")
 //	public ModelAndView load() {
-////		List<Scientist> p = WikiCrawler.addPeace();
-////		for(Scientist s : p) {
-////			scientistDao.create(s);
-////		}
-////		List<Scientist> w = WikiCrawler.addWomen();
-////		for(Scientist s : w) {
-////			scientistDao.create(s);
-////		}
-////		List<Scientist> y = WikiCrawler.addPhysics();
-////		for(Scientist s : y) {
-////			scientistDao.create(s);
-////		}
+//		List<Scientist> p = WikiCrawler.addPeace();
+//		for(Scientist s : p) {
+//			scientistDao.create(s);
+//		}
+//		List<Scientist> w = WikiCrawler.addWomen();
+//		for(Scientist s : w) {
+//			scientistDao.create(s);
+//		}
+//		List<Scientist> y = WikiCrawler.addPhysics();
+//		for(Scientist s : y) {
+//			scientistDao.create(s);
+//		}
 //		return new ModelAndView("redirect:/");
 //	}
 	
-
 
 }

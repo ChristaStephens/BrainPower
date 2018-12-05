@@ -38,6 +38,7 @@
 		<span><a href="/">Next Scientist</a></span>
 	</button>
 
+<<<<<<< HEAD
 	<h1>
 		<p>
 			<img class="scientist" src="${scientist.image }">
@@ -45,31 +46,64 @@
 		<H8>Fact:</H8>
 	</h1>
 	<h1>${chuck.value }</h1>
+=======
+
+<<<<<<< HEAD
+
+=======
+	<h1>
+		<p>
+			<img src="${scientist.image }" />
+		</p>
+	</h1>
+	<h1>${fact}</h1>
+
+
+	
+>>>>>>> 31d48a8a85ebd9b84b214f7e4fdb523a92c3eb85
+
+	<div class="container">
+		<img src="${scientist.image }" alt="Avatar" class="image"
+			style="width: 30%">
+		<div class="middle">
+			<div class="text">${chuck.value }</div>
+		</div>
+	</div>
+
+
+
+
+>>>>>>> cf72a0c575d01c407b6a37ea89ff2dc1a10b7c20
 	<!-- Scientist strength rating -->
 	<div class="container" style="text-align: center; width: 100%;">
 
+<<<<<<< HEAD
 		<h1>How Strong?</h1>
+=======
+
+>>>>>>> cf72a0c575d01c407b6a37ea89ff2dc1a10b7c20
 		<form action="submit">
-			<b>Weakling</b> <label class="radio-inline"> <input
-				type="radio" name="optradio" value="1" checked>
+			 <b>Weakling</b> <label
+				class="radio-inline"> <input type="radio" name="strength"
+				value="1" checked>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio" value="2"><b>2</b>
+				name="strength" value="2"><b>2</b>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio" value="3"><b>3</b>
+				name="strength" value="3"><b>3</b>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio" value="4"><b>4</b>
+				name="strength" value="4"><b>4</b>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio" value="5"><b>5</b>
+				name="strength" value="5"><b>5</b>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio" value="6"><b>6</b>
+				name="strength" value="6"><b>6</b>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio" value="7"><b>7</b>
+				name="strength" value="7"><b>7</b>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio" value="8"><b>8</b>
+				name="strength" value="8"><b>8</b>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio" value="9"><b>9</b>
+				name="strength" value="9"><b>9</b>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="optradio" value="10"><b>Chuck Norris</b>
+				name="strength" value="10"><b>Chuck Norris</b>
 			</label> <input type="hidden" name="scientistID" value="${scientist.id }">
 		</form>
 
