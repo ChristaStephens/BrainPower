@@ -38,40 +38,21 @@
 		<span><a href="/">Next Scientist</a></span>
 	</button>
 
-
-<<<<<<< HEAD
-
-=======
 	<h1>
 		<p>
-			<img src="${scientist.image }" />
+			<img class="scientist" src="${scientist.image }">
 		</p>
+		<H8>Fact:</H8>
 	</h1>
-	<h1>${fact}</h1>
+	<h1>${fact}</h1>	<!-- Scientist strength rating -->
+	<div class="container" style="text-align: center; width: 100%;">
 
 
-	
->>>>>>> 31d48a8a85ebd9b84b214f7e4fdb523a92c3eb85
-
-	<div class="container">
-		<img src="${scientist.image }" alt="Avatar" class="image"
-			style="width: 30%">
-		<div class="middle">
-			<div class="text">${chuck.value }</div>
-		</div>
-	</div>
-
-
-
-
-	<!-- Scientist strength rating -->
-	<div class="containerform" style="text-align: center; width: 100%;">
-
+		<h1>How Strong?</h1>
 
 		<form action="submit">
-			 <b>Weakling</b> <label
-				class="radio-inline"> <input type="radio" name="strength"
-				value="1" checked>
+			<b>Weakling</b> <label class="radio-inline"> <input
+				type="radio" name="strength" value="1" checked>
 			</label> <label class="radio-inline"> <input type="radio"
 				name="strength" value="2"><b>2</b>
 			</label> <label class="radio-inline"> <input type="radio"
@@ -97,8 +78,8 @@
 		<h1>Is This Scientist Stronger Than Chuck?</h1>
 
 		<span class="yes" onclick="myFunction()"><i
-			class="fas fa-thumbs-up fa-4x"></i></span> <span class="no"
-			onclick="myFunction1()"><i class="fa fa-thumbs-down fa-4x"></i></span>
+			class="fas fa-thumbs-up fa-2x"></i></span> <span class="no"
+			onclick="myFunction1()"><i class="fa fa-thumbs-down fa-2x"></i></span>
 
 		<p id="demo"></p>
 		<script>
