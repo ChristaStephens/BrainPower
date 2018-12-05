@@ -9,13 +9,16 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import brainpower.scientist.dao.ReviewDao;
 import brainpower.scientist.dao.ScientistDao;
 import brainpower.scientist.model.ChuckResponse;
+import brainpower.scientist.model.Review;
 import brainpower.scientist.model.Scientist;
 import brainpower.scientist.model.StringParser;
 import brainpower.scientist.model.WikiCrawler;
@@ -26,8 +29,11 @@ import brainpower.scientist.model.WikiCrawler;
 
 @Controller
 public class ScientistController {
+	
 	@Autowired ScientistDao scientistDao;
 	@Autowired WikiCrawler wikiCrawler;
+	@Autowired ReviewDao reviewDao;
+	
 	private RestTemplate restTemplateWithUserAgent;
 	
 	// This is an instance initialization block. It runs when a new instance of the class is created--
@@ -125,15 +131,22 @@ public class ScientistController {
 	}
 	
 
-	@RequestMapping("/submit")
-	public ModelAndView submit(@RequestParam (name= "strength", required =true) String strength) {
+	@PostMapping("/submit/{id}")
+	public ModelAndView submit(@RequestParam (name= "strength", required =true) Integer strength, Scientist scientist) {
 	ModelAndView mv =new ModelAndView ("redirect:/");
 	mv.addObject("strength",strength);
-	System.out.println("hey boo");
+	Review r = new Review(strength, scientist);
+	reviewDao.create(r);
+	
+	Scientist s = scientistDao.findById(scientist.getId());
+	s.setStrength(reviewDao.findAverage(s));
+	scientistDao.update(s);
+	
 	return mv;
 	
 	}
 	
+	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
 	
 //	@RequestMapping("/load")
 //	public ModelAndView load() {

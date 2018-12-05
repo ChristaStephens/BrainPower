@@ -34,18 +34,20 @@
 		</div>
 		<a href="/">About</a>
 	</div>
-	<form action="submit">
+	<form method="post" action="submit/${ scientist.id }" >
 	<button class="button" style="vertical-align: middle">
-		<span><a href="/">Next Scientist</a></span>
+		<span>Next Scientist</span>
 	</button>
 
 	<h1>
-		<p>
-			<img class="scientist" src="${scientist.image }">
+		<p class="scientist">
+			<img class="scientist" src="${scientist.image }" >
 		</p>
 		<H8>Fact:</H8>
 	</h1>
-	<h1>${fact}</h1>	<!-- Scientist strength rating -->
+	
+	<h1 id="fact">${fact}</h1>	
+	<!-- Scientist strength rating -->
 	<div class="container" style="text-align: center; width: 100%;">
 
 

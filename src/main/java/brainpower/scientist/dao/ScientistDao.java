@@ -1,5 +1,6 @@
 package brainpower.scientist.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -12,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import brainpower.scientist.model.Scientist;
-
 
 @Repository
 @Transactional
@@ -35,7 +35,7 @@ public class ScientistDao {
 		return em.createQuery("FROM Scientist WHERE name = :name", Scientist.class)
 				.setParameter("regex", "%" + name.toLowerCase() + "%").getResultList();
 	}
-	
+
 	public List<Scientist> findByCountry(String country) {
 		return em.createQuery("FROM Scientist WHERE country = :country", Scientist.class)
 				.setParameter("country", country).getResultList();
@@ -44,14 +44,15 @@ public class ScientistDao {
 	public List<Scientist> findByStrength() {
 		return em.createQuery("FROM Scientist ORDER BY strength DESC", Scientist.class).getResultList();
 	}
-	
+
 	public List<Scientist> findByWeakness() {
 		return em.createQuery("FROM Scientist ORDER BY strength ASC", Scientist.class).getResultList();
 	}
-	
+
 	public List<Scientist> findNumber() {
-		return em.createQuery("FROM Scientist ORDER BY strength DESC", Scientist.class).setMaxResults(15).getResultList();
-		
+		return em.createQuery("FROM Scientist ORDER BY strength DESC", Scientist.class).setMaxResults(15)
+				.getResultList();
+
 	}
 
 	public List<Scientist> findByField(String field) {
@@ -67,20 +68,35 @@ public class ScientistDao {
 		// This query returns a list of Strings
 		List<String> countryList = em.createQuery("SELECT DISTINCT country FROM Scientist", String.class)
 				.getResultList();
+		List<String> newList = new ArrayList<>();
+		for (String s : countryList) {
+			String[] a = s.split(",");
+
+			for (String str : a) {
+				newList.add(str);
+			}
+		}
 		// Convert the List to a Set.
-		return new TreeSet<>(countryList);
+		return new TreeSet<>(newList);
 
 	}
-	
+
 	public Set<String> findAllFields() {
 		// This query returns a list of Strings
-		List<String> fieldList = em.createQuery("SELECT DISTINCT field FROM Scientist", String.class)
-				.getResultList();
+		List<String> fieldList = em.createQuery("SELECT DISTINCT field FROM Scientist", String.class).getResultList();
+		List<String> newList = new ArrayList<>();
+		for (String s : fieldList) {
+			String[] a = s.split(",");
+
+			for (String str : a) {
+				newList.add(str);
+			}
+		}
 		// Convert the List to a Set.
-		return new TreeSet<>(fieldList);
+		return new TreeSet<>(newList);
 
 	}
-	
+
 	public void update(Scientist scientist) {
 		em.merge(scientist);
 	}

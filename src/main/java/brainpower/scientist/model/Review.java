@@ -20,6 +20,17 @@ public class Review {
 		@ManyToOne
 		@JoinColumn(name = "scientist_id")
 		private Scientist scientist;
+		
+		public Review() {
+			
+		} 
+		 public Review(Integer strength, Scientist scientist) {
+			 this.strength=strength;
+			 this.scientist=scientist;
+			 
+		 }
+		 
+		 
 
 		public Long getId() {
 			return id;
