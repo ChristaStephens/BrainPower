@@ -156,7 +156,7 @@ public class ScientistController {
 		return mv;
 
 	}
-<<<<<<< HEAD
+
 	
 	@RequestMapping("/bracket")
 	//change "required" to "true" when table is mapped.
@@ -165,9 +165,7 @@ public class ScientistController {
 		return mv;
 	}
 	
-=======
 
->>>>>>> 58c5c4e445ff8f2663748f52750796210e0a56a8
 	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
 
 //	@RequestMapping("/load")
