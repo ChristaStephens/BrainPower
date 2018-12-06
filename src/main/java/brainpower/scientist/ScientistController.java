@@ -99,14 +99,24 @@ public class ScientistController {
 	@PostMapping("/table-filter")
 	public ModelAndView filterByCountry(@RequestParam(name = "country", required = false) String country,
 			@RequestParam(name = "field", required = false) String field) {
+		ModelAndView mv = new ModelAndView("table");
 		if (!(country.isEmpty()) && !(field.isEmpty())) {
-			return new ModelAndView("table","scientists", scientistDao.findByCountryAndField(country, field));
+			mv.addObject("allCountries", scientistDao.findAllCountries());
+			mv.addObject("fields", scientistDao.findAllFields());
+			mv.addObject("scientists", scientistDao.findByCountryAndField(country, field));
+			return mv;
 		}
 		else if (!(country.isEmpty()) && (field.isEmpty())) {
-			return new ModelAndView("table", "scientists", scientistDao.findByCountry(country));
+			mv.addObject("allCountries", scientistDao.findAllCountries());
+			mv.addObject("fields", scientistDao.findAllFields());
+			mv.addObject( "scientists", scientistDao.findByCountry(country));
+			return mv;
 		}
 		else if ((country.isEmpty()) && !(field.isEmpty())) {
-			return new ModelAndView("table", "scientists", scientistDao.findByField(field));
+			mv.addObject("allCountries", scientistDao.findAllCountries());
+			mv.addObject("fields", scientistDao.findAllFields());
+			mv.addObject("scientists", scientistDao.findByField(field));
+			return mv;
 		}
 
 		return new ModelAndView("redirect:/table");
