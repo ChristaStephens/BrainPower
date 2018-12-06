@@ -96,19 +96,20 @@ public class ScientistController {
 		return mv;
 	}
 
-	@RequestMapping("/table-filter")
+	@PostMapping("/table-filter")
 	public ModelAndView filterByCountry(@RequestParam(name = "country", required = false) String country,
 			@RequestParam(name = "field", required = false) String field) {
-		ModelAndView mv = new ModelAndView("table");
-		if (field != null && country != null) {
-			mv.addObject("scientists", scientistDao.findByField(field));
-			return mv;
-		} else if ((field != null) && (!field.isEmpty())) {
-			mv.addObject("scientists", scientistDao.findByField(field));
-			System.out.println("hello");
-			return mv;
-		} 
-			return new ModelAndView("redirect:/");
+		if (!(country.isEmpty()) && !(field.isEmpty())) {
+			return new ModelAndView("table","scientists", scientistDao.findByCountryAndField(country, field));
+		}
+		else if (!(country.isEmpty()) && (field.isEmpty())) {
+			return new ModelAndView("table", "scientists", scientistDao.findByCountry(country));
+		}
+		else if ((country.isEmpty()) && !(field.isEmpty())) {
+			return new ModelAndView("table", "scientists", scientistDao.findByField(field));
+		}
+
+		return new ModelAndView("redirect:/table");
 	}
 
 	@RequestMapping("/table-show-all-high")

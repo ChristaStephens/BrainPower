@@ -44,7 +44,7 @@
 	</div>
 	<div id="filters">
 	
-			<form action="/table-filter">
+			<form action="/table-filter" method="post">
 				<select id="country" name="country">
 					<option value="">Filter By Country</option>
 					<c:forEach items="${ allCountries }" var="c">

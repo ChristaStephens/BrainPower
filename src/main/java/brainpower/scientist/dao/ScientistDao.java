@@ -65,7 +65,7 @@ public class ScientistDao {
 		em.persist(scientist);
 	}
 	
-	public List<Scientist> findByScientistAndField(String country, String field){
+	public List<Scientist> findByCountryAndField(String country, String field){
 		return em.createQuery("FROM Scientist WHERE country =: country AND field =: field", Scientist.class)
 				.setParameter("country", country).setParameter("field", field).getResultList();
 	}
