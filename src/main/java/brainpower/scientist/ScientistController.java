@@ -147,6 +147,13 @@ public class ScientistController {
 	
 	}
 	
+	@RequestMapping("/bracket")
+	//change "required" to "true" when table is mapped.
+	public ModelAndView showBracket( ) {
+		ModelAndView mv =new ModelAndView ("bracket");
+		return mv;
+	}
+	
 	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
 	
 //	@RequestMapping("/load")

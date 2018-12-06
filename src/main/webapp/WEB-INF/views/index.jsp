@@ -21,7 +21,8 @@
 <body>
 
 	<div class="navbar">
-		<a href="/">Home</a>
+		<a href="/">BrainPower</a>
+		
 
 		<div class="dropdown">
 			<button class="dropbtn">

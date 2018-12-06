@@ -31,7 +31,7 @@
 <body>
 
 	<div class="navbar">
-		<a href="/">Home</a>
+		<a href="/">BrainPower</a>
 
 		<div class="dropdown">
 			<button class="dropbtn">
@@ -42,6 +42,8 @@
 			</div>
 		</div>
 	</div>
+	
+	
 	<div id="filters">
 		<div>
 			<form action="/table-country">
@@ -92,7 +94,8 @@
 		<c:forEach var="s" items="${scientists }">
 			<tr>
 
-				<td><a href="/details?id=${s.id}"  style="background-color: #ffff66;" data-tooltip="${s.image }" >${s.name }</a></td>
+				<td><a class="link"href="/details?id=${s.id}"
+					 data-tooltip="${s.image }">${s.name }</a></td>
 
 				<td>${s.strength}</td>
 
