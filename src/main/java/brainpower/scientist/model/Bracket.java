@@ -1,16 +1,19 @@
 package brainpower.scientist.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name ="bracket")
 public class Bracket {
-	
+
 	//need to have table related to scientist
 	//and related to ratings
 	@Id
@@ -21,6 +24,11 @@ public class Bracket {
 	private String round2;
 	private String round3;
 	private String champion;
+	
+	@OneToMany(mappedBy = "bracket")
+	private Set<Scientist> scientists;
+	
+	
 
 	public Bracket () {}
 
