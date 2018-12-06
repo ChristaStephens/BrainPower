@@ -18,7 +18,7 @@
 				See List <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="/table">Scientist</a>
+				<a href="/table">Scientists</a>
 			</div>
 		</div>
 	</div>

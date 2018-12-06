@@ -29,7 +29,7 @@
 			</button>
 
 			<div class="dropdown-content">
-				<a href="/table">Scientist</a>
+				<a href="/table">Scientists</a>
 			</div>
 		</div>
 		<a href="/">About</a>
