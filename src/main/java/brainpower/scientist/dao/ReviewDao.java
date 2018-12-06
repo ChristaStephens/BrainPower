@@ -1,12 +1,15 @@
 package brainpower.scientist.dao;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 import brainpower.scientist.model.Review;
 import brainpower.scientist.model.Scientist;
 
@@ -26,7 +29,9 @@ public class ReviewDao {
 		for (Review r : average) {
 			strength = strength + r.getStrength();
 		}
-		return strength / average.size();
+		DecimalFormat formatter = new DecimalFormat("#0.0");
+		String dub = formatter.format(strength / average.size());
+		return Double.parseDouble(dub);
 	}
 
 	public void create(Review review) {

@@ -9,6 +9,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -132,7 +133,7 @@ public class ScientistController {
 	
 
 	@PostMapping("/submit/{id}")
-	public ModelAndView submit(@RequestParam (name= "strength", required =true) Integer strength, Scientist scientist) {
+	public ModelAndView submit(@PathVariable("id") Integer id, @RequestParam (name= "strength", required =true) Integer strength, Scientist scientist) {
 	ModelAndView mv =new ModelAndView ("redirect:/");
 	mv.addObject("strength",strength);
 	Review r = new Review(strength, scientist);
