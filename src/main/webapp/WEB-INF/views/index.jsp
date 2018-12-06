@@ -21,7 +21,8 @@
 <body>
 
 	<div class="navbar">
-		<a href="/">Home</a>
+		<a href="/">BrainPower</a>
+		
 
 		<div class="dropdown">
 			<button class="dropbtn">
@@ -29,7 +30,7 @@
 			</button>
 
 			<div class="dropdown-content">
-				<a href="/table">Scientist</a>
+				<a href="/table">Scientists</a>
 			</div>
 		</div>
 		<a href="/">About</a>

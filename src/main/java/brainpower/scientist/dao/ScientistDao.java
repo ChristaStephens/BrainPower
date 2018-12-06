@@ -36,11 +36,6 @@ public class ScientistDao {
 				.setParameter("regex", "%" + name.toLowerCase() + "%").getResultList();
 	}
 
-	public List<Scientist> findByCountry(String country) {
-		return em.createQuery("FROM Scientist WHERE country = :country", Scientist.class)
-				.setParameter("country", country).getResultList();
-	}
-
 	public List<Scientist> findByStrength() {
 		return em.createQuery("FROM Scientist ORDER BY strength DESC", Scientist.class).getResultList();
 	}
@@ -54,19 +49,30 @@ public class ScientistDao {
 				.getResultList();
 
 	}
+	public List<Scientist> findByCountry(String country) {
+		return em.createQuery("FROM Scientist WHERE LOWER(country) LIKE :regex ORDER BY name ASC", Scientist.class)
+				.setParameter("regex",  "%" + country.toLowerCase() + "%").getResultList();
+	}
 
 	public List<Scientist> findByField(String field) {
-		return em.createQuery("FROM Scientist WHERE LOWER(field) LIKE :regex", Scientist.class)
+		List<Scientist> list =  em.createQuery("FROM Scientist WHERE LOWER(field) LIKE :regex ORDER BY name ASC", Scientist.class)
 				.setParameter("regex", "%" + field.toLowerCase() + "%").getResultList();
+
+		return list;
 	}
 
 	public void create(Scientist scientist) {
 		em.persist(scientist);
 	}
+	
+	public List<Scientist> findByCountryAndField(String country, String field){
+		return em.createQuery("FROM Scientist WHERE country =: country AND field =: field", Scientist.class)
+				.setParameter("country", country).setParameter("field", field).getResultList();
+	}
 
 	public Set<String> findAllCountries() {
 		// This query returns a list of Strings
-		List<String> countryList = em.createQuery("SELECT DISTINCT country FROM Scientist", String.class)
+		List<String> countryList = em.createQuery("SELECT DISTINCT country FROM Scientist ORDER BY country ASC", String.class)
 				.getResultList();
 		List<String> newList = new ArrayList<>();
 		for (String s : countryList) {
@@ -76,6 +82,7 @@ public class ScientistDao {
 				newList.add(str);
 			}
 		}
+	
 		// Convert the List to a Set.
 		return new TreeSet<>(newList);
 
@@ -83,7 +90,7 @@ public class ScientistDao {
 
 	public Set<String> findAllFields() {
 		// This query returns a list of Strings
-		List<String> fieldList = em.createQuery("SELECT DISTINCT field FROM Scientist", String.class).getResultList();
+		List<String> fieldList = em.createQuery("SELECT DISTINCT field FROM Scientist ORDER BY field ASC", String.class).getResultList();
 		List<String> newList = new ArrayList<>();
 		for (String s : fieldList) {
 			String[] a = s.split(",");
