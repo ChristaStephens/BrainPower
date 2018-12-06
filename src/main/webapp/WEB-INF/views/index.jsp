@@ -26,7 +26,7 @@
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				See List <i class="fa fa-caret-down"></i>
+				Power Rankings <i class="fa fa-caret-down"></i>
 			</button>
 
 			<div class="dropdown-content">

@@ -35,7 +35,7 @@
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				See List <i class="fa fa-caret-down"></i>
+				Power Rankings <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
 				<a href="/table">Scientists</a>
@@ -62,30 +62,6 @@
 				</c:forEach>
 			</select>
 			
-			<select id="scope" name="scope">
-				<option selected="selected" value="" style="display:none">-Results-</option>
-				<option value="high">Strongest</option>
-				<option value="low" >Weakest</option>
-				<option value="all" >All</option>
-			</select>
-			
-
-
-		<form action="/table-filter" method="post">
-			<select id="country" name="country">
-				<option value="">Filter By Country</option>
-				<c:forEach items="${ allCountries }" var="c">
-					<option>${ c }</option>
-				</c:forEach>
-			</select> <select id="field" name="field">
-				<option value="">Filter By Field</option>
-				<c:forEach items="${ fields }" var="f">
-					<option>${ f }</option>
-				</c:forEach>
-			</select> <a href="/table-show-all-high">Show all high-low</a> <a
-				href="/table-show-all-low">Show all low-high</a>
-
-
 			<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
 			<a href="/table">Clear Filter</a>
 		</form>
