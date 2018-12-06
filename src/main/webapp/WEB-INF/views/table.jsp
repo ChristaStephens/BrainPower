@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link type="text/css" rel="stylesheet" href="style.css">
+<link type="text/css" rel="stylesheet" href="table.css">
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -41,11 +41,12 @@
 				<a href="/table">Scientists</a>
 			</div>
 		</div>
-	</div>
-
-
-	<div id="filters">
-	
+		
+		
+		
+		<div class="dropdown">
+			<button class="dropbtn">
+			
 			<form action="/table-filter" method="post">
 				<select id="country" name="country">
 					<option selected="selected" value="" style="display:none">-Country-</option>
@@ -57,16 +58,20 @@
 
 			<select id="field" name="field">
 				<option selected="selected" value="" style="display:none">-Field-</option>
-				<c:forEach items="${ fields }" var="f">
+				<button type="submit" class="btn btn-primary mb-2 mr-2"><c:forEach items="${ fields }" var="f">
 					<option>${ f }</option>
-				</c:forEach>
+				</c:forEach></button>
 			</select>
 			
 			<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
 			<a href="/table">Clear Filter</a>
 		</form>
-
+			
+		</div>
 	</div>
+
+
+	
 	<table class="tabledata" id="science">
 		<tr>
 

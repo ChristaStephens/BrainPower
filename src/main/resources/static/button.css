@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 .button {
+	
   display: inline-block;
   border-radius: 4px;
   background-color: #4d4d4d;
@@ -12,11 +13,12 @@
   width: 50%;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
-   overflow: hidden;
-   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-   margin-top: 25px;
-   margin-left: 13em;
+  margin: 90px;
+  overflow: hidden;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  margin-top: 25px;
+  margin-right: 3em;
+   
 }
 
 .button span {

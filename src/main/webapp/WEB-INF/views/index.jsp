@@ -22,7 +22,7 @@
 
 	<div class="navbar">
 		<a href="/">BrainPower</a>
-		
+
 
 		<div class="dropdown">
 			<button class="dropbtn">
@@ -30,31 +30,30 @@
 			</button>
 
 			<div class="dropdown-content">
-				<a href="/table">Scientists</a>
+				<a href="/table">Scientists</a> <a href="/bracket">Bracket</a>
 			</div>
 		</div>
 		<a href="/">About</a>
+
 	</div>
-	<form method="post" action="submit/${ scientist.id }" >
-	<button class="button" style="vertical-align: middle">
-		<span>Next Scientist</span>
-	</button>
-
-	<h1>
-		<p class="scientist">
-			<img class="scientist" src="${scientist.image }" >
-		</p>
-		<H8>Fact:</H8>
-	</h1>
-	
-	<h1 id="fact">${fact}</h1>	
-	<!-- Scientist strength rating -->
-	<div class="container" style="text-align: center; width: 100%;">
+	<form method="post" action="submit/${ scientist.id }">
 
 
-		<h1>How Strong?</h1>
+		<h1>
+			<p class="scientist">
+				<img class="scientist" src="${scientist.image }">
+			</p>
+			<H8>Fact:</H8>
+		</h1>
 
-		
+		<h1 class="factss" id="fact">${fact}</h1>
+		<!-- Scientist strength rating -->
+		<div class="container" style="text-align: center; width: 100%;">
+
+
+			<h1>How Strong?</h1>
+
+
 			<b>Weakling</b> <label class="radio-inline"> <input
 				type="radio" name="strength" value="1" checked>
 			</label> <label class="radio-inline"> <input type="radio"
@@ -76,28 +75,33 @@
 			</label> <label class="radio-inline"> <input type="radio"
 				name="strength" value="10"><b>Chuck Norris</b>
 			</label> <input type="hidden" name="scientistID" value="${scientist.id }">
-		</form>
 
-		<!-- Is this scientist stringer than chuck function -->
-		<h1>Is This Scientist Stronger Than Chuck?</h1>
+			<button class="button" style="vertical-align: left">
+				<span>Next Scientist</span>
+			</button>
+	</form>
 
-		<span class="yes" onclick="myFunction()"><i
-			class="fas fa-thumbs-up fa-2x"></i></span> <span class="no"
-			onclick="myFunction1()"><i class="fa fa-thumbs-down fa-2x"></i></span>
+	<!-- Is this scientist stringer than chuck function -->
+	<h1>Is This Scientist Stronger Than Chuck?</h1>
 
-		<p id="demo"></p>
-		<script>
-			function myFunction() {
-				document.getElementById("demo").innerHTML = "Are you nuts, the Norse Gods are named after Chuck Norris. No one is stronger than Chuck!";
-			}
-		</script>
+	<span class="yes" onclick="myFunction()"><i
+		class="fas fa-thumbs-up fa-2x"></i></span>
+	<span class="no" onclick="myFunction1()"><i
+		class="fa fa-thumbs-down fa-2x"></i></span>
 
-		<p id="demo"></p>
-		<script>
-			function myFunction1() {
-				document.getElementById("demo").innerHTML = "You've chosen wisely, Chuck will spare you......for now.";
-			}
-		</script>
+	<p id="demo"></p>
+	<script>
+		function myFunction() {
+			document.getElementById("demo").innerHTML = "Are you nuts, the Norse Gods are named after Chuck Norris. No one is stronger than Chuck!";
+		}
+	</script>
+
+	<p id="demo"></p>
+	<script>
+		function myFunction1() {
+			document.getElementById("demo").innerHTML = "You've chosen wisely, Chuck will spare you......for now.";
+		}
+	</script>
 	</div>
 
 
