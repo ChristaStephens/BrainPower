@@ -3,12 +3,16 @@ h1{
 	text-align: center;
 	
 }
+body {
+	background-color: #b6b6b6;
+	color: black;
+}
 
 
 
 .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: #4d4d4d;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -123,30 +127,17 @@ h1{
 	background-color: #555;
 }
 <!-- next button -->
-.button3 {width: 100%;}
-.button1 {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
+
 .button a{
 	color: white;
 	
 }
-body {
-	
-}
+
 <!-- table -->
 table {
     border-collapse: collapse;
     width: 100%;
+    box-shadow: 0 12px 50px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 th, td {
@@ -154,10 +145,11 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(odd){background-color: #4d4d4d}
+tr:nth-child(even){background-color: #4d4d4d}
 
 th {
-    background-color: #4CAF50;
+    background-color: #4d4d4d;
     color: white;
 }
 
@@ -166,7 +158,14 @@ th {
 	border-collapse: collapse;
 	width: 100%;
 	margin-top: 25px;
+	color: white;
 }
+
+.tabledata a {
+	color: white;
+}
+
+tr:hover {background-color: #aaacac;}
 
  #petty{
 	 width:25px;
