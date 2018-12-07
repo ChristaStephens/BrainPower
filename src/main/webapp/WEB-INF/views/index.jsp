@@ -51,7 +51,7 @@
 		<div class="container" style="text-align: center; width: 100%;">
 
 
-			<h1>How Strong?</h1>
+			<h1>How Strong is ${scientist.name } ?</h1>
 
 
 			<b>Weakling</b> <label class="radio-inline"> <input
