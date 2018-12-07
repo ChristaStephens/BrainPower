@@ -62,6 +62,7 @@
 					<option>${ f }</option>
 				</c:forEach></button>
 			</select>
+			<button type="submit" class="btn btn-primary mb-2 mr-2">View All</button>
 			
 			<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
 			<a href="/table">Clear Filter</a>
