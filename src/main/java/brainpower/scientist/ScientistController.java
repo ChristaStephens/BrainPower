@@ -21,6 +21,7 @@ import brainpower.scientist.model.ChuckResponse;
 import brainpower.scientist.model.Review;
 import brainpower.scientist.model.Scientist;
 import brainpower.scientist.model.StringParser;
+import brainpower.scientist.model.Utility;
 import brainpower.scientist.model.WikiCrawler;
 
 @Controller
@@ -51,37 +52,18 @@ public class ScientistController {
 	}
 
 	@RequestMapping("/")
-	// change "required" to "true" when table is mapped.
 	public ModelAndView showIndex() {
 
-		List<String> list = new ArrayList<>();
-		list.add("money");
-		list.add("travel");
-		list.add("science");
-		list.add("sport");
-		list.add("movie");
-		list.add("celebrity");
-		list.add("career");
-		list.add("money");
-		list.add("fashion");
-		list.add("dev");
-		list.add("animal");
-		list.add("food");
-		list.add("music");
-
-		// pulls from the list at random
-		int r = (int) (Math.random() * list.size());
-		String category = list.get(r);
-
-		String url = "https://api.chucknorris.io/jokes/random?category=" + category;
+		String url = "https://api.chucknorris.io/jokes/random?category=" + Utility.getCategory();
 		ChuckResponse rep = restTemplateWithUserAgent.getForObject(url, ChuckResponse.class);
 		ModelAndView mv = new ModelAndView("index");
 
 		List<Scientist> scientists = scientistDao.findAll();
-		int s = (int) (Math.random() * scientists.size());
-
-		String fact = StringParser.parseString(rep.getValue(), scientists.get(s).getName());
-		mv.addObject("scientist", scientists.get(s));
+		int r = Utility.getRandom(scientists.size());
+		String fact = StringParser.parseString(rep.getValue(), 
+				scientists.get(r).getName());
+		
+		mv.addObject("scientist", scientists.get(r));
 		mv.addObject("chuck", rep);
 		mv.addObject("fact", fact);
 		return mv;
@@ -120,25 +102,6 @@ public class ScientistController {
 		}
 
 		return new ModelAndView("table", "scientists", scientistDao.findAll());
-	}
-
-	@RequestMapping("/table-show-all-high")
-	public ModelAndView showAllHigh() {
-		List<Scientist> list = scientistDao.findByStrength();
-		return new ModelAndView("table", "scientists", list);
-	}
-
-	@RequestMapping("/table-show-all-low")
-	public ModelAndView showAllLow() {
-		List<Scientist> list = scientistDao.findByWeakness();
-		return new ModelAndView("table", "scientists", list);
-	}
-
-	@RequestMapping("/details")
-	public ModelAndView showDetails(@RequestParam(name = "id") Long id) {
-		ModelAndView mv = new ModelAndView("details");
-		mv.addObject("scientist", scientistDao.findById(id));
-		return mv;
 	}
 
 	@PostMapping("/submit/{id}")

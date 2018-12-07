@@ -7,7 +7,7 @@ public class StringParser {
 		
 		String newString = joke.replaceAll("(Chuck Norris)|(Chuck|Norris)", name);
 		
-		//account for pronouns
+		//account for pronouns and possessives (Norris')
 		
 		return newString;
 	}

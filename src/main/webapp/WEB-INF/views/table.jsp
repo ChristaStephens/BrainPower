@@ -87,17 +87,19 @@
 
 
 			<th>Name</th>
+			<th>Field</th>
+			<th>Country</th>
 			<th>Strength</th>
 		</tr>
 		<c:forEach var="s" items="${scientists }">
 			<tr>
 
-				<td><a class="screenshot" href="${s.bioLink }"
+				<td><a target="blank" class="screenshot" href="${s.bioLink }"
 					data-tooltip="${s.image }" class="tooltip" > ${s.name }</a></td>
 					
 					
-		
-				
+				<td>${s.field}</td>
+				<td>${s.country}</td>
 				<td>${s.strength}</td>
 
 
