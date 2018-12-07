@@ -41,7 +41,8 @@
 
 		<h1>
 			<p class="scientist">
-				<img class="scientist" src="${scientist.image }" src="${s.rationale }">
+				<img class="scientist" src="${scientist.image }"
+					src="${s.rationale }">
 			</p>
 			<H8>Fact:</H8>
 		</h1>
@@ -75,20 +76,24 @@
 			</label> <label class="radio-inline"> <input type="radio"
 				name="strength" value="10"><b>Chuck Norris</b>
 			</label> <input type="hidden" name="scientistID" value="${scientist.id }">
-
-			<button class="button" style="vertical-align: left">
-				<span>Next Scientist</span>
-			</button>
+			<br>
+			<div style="text-align: center">
+				<button class="button">
+					<span>Next Scientist</span>
+				</button>
+				</div>
+			</div>
 	</form>
 
 	<!-- Is this scientist stringer than chuck function -->
 	<h1>Is This Scientist Stronger Than Chuck?</h1>
-
+<div style="text-align: center">
 	<span class="yes" onclick="myFunction()"><i
 		class="fas fa-thumbs-up fa-2x"></i></span>
 	<span class="no" onclick="myFunction1()"><i
 		class="fa fa-thumbs-down fa-2x"></i></span>
-
+</div>
+<div style="text-align: center">
 	<p id="demo"></p>
 	<script>
 		function myFunction() {
@@ -107,7 +112,7 @@
 
 	<!-- Share buttons will clean up -->
 
-	<div id="share">
+	<div id="share" style="text-align: center">
 
 		<!-- Buffer -->
 		<a
