@@ -36,6 +36,8 @@ public class ScientistController {
 	WikiCrawler wikiCrawler;
 	@Autowired
 	ReviewDao reviewDao;
+	@Autowired
+	ScientistTeam scientistTeam;
 
 	private RestTemplate restTemplateWithUserAgent;
 
@@ -128,40 +130,11 @@ public class ScientistController {
 	//change "required" to "true" when table is mapped.
 	public ModelAndView showBracket( ) {
 		ModelAndView mv =new ModelAndView ("bracket");
+		List<Team> teams = scientistTeam.loadScientist(scientistDao.)
+		
 		return mv;
 		
-		//how to connect method with bracket?
-		public static void loadScientist(ArrayList<Scientist> teamScientist)
-		
-		
 	}
-	
-	
-	private static Team pickWinner(Team home, Team visitor) {
-	    RandomGenerator randomGenerator = new RandomGenerator();
-	    ArrayList<Team> thisGame = new ArrayList<Team>();
-	    thisGame.add(home);
-	    thisGame.add(visitor);
-	    //bring in scientist team list here? from team pojo?
-	    List<Team> winner = randomGenerator.randomize(thisGame, 1, true);
-//	    System.out.println("Winner of " + home.toString() + " vs " + visitor.toString() + " is " + winner.get(0).getName());
-	    return winner.get(0);
-	}
-	
-	
-
-private static ArrayList<Team> processBracket(ArrayList<Team> thisRound) {
-    ArrayList<Team> returnBracket = new ArrayList<Team>();
-    int start = 0;
-    int end = (thisRound.size() - 1);
-    while (start < end) {
-        Team winner = pickWinner(thisRound.get(start), thisRound.get(end));
-        returnBracket.add(winner);
-        start++;
-        end--;
-    }
-    return returnBracket;
-}
 	
 	
 	

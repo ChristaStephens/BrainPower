@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Team {
 	
-	private String scientist;
+	private Scientist scientist;
 	private Integer strength;
 	private Integer seed;
 	
@@ -13,7 +13,7 @@ public class Team {
 	public Team() {}
 
 
-	public Team(String scientist, Integer strength, Integer seed) {
+	public Team(Scientist scientist, Integer strength, Integer seed) {
 		super();
 		this.scientist = scientist;
 		this.strength = strength;
@@ -21,12 +21,12 @@ public class Team {
 	}
 
 
-	public String getScientist() {
+	public Scientist getScientist() {
 		return scientist;
 	}
 
 
-	public void setScientist(String scientist) {
+	public void setScientist(Scientist scientist) {
 		this.scientist = scientist;
 	}
 
