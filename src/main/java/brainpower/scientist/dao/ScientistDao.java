@@ -87,7 +87,17 @@ public class ScientistDao {
 		return new TreeSet<>(newList);
 
 	}
-
+	
+	public List<Scientist> fillTournament(){
+		List<Scientist> all = findByStrength();
+		List<Scientist> list = new ArrayList<>();
+		
+		for (int i = 0; i < 16; i++) {
+			list.add(all.get(i));
+		}
+		
+		return list;
+	}
 	public Set<String> findAllFields() {
 		// This query returns a list of Strings
 		List<String> fieldList = em.createQuery("SELECT DISTINCT field FROM Scientist ORDER BY field ASC", String.class).getResultList();
