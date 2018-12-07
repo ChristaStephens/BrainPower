@@ -15,12 +15,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gitlab.johnjvester.randomizer.RandomGenerator;
+
 import brainpower.scientist.dao.ReviewDao;
 import brainpower.scientist.dao.ScientistDao;
 import brainpower.scientist.model.ChuckResponse;
 import brainpower.scientist.model.Review;
 import brainpower.scientist.model.Scientist;
 import brainpower.scientist.model.StringParser;
+import brainpower.scientist.model.Team;
 import brainpower.scientist.model.Utility;
 import brainpower.scientist.model.WikiCrawler;
 
@@ -126,7 +129,42 @@ public class ScientistController {
 	public ModelAndView showBracket( ) {
 		ModelAndView mv =new ModelAndView ("bracket");
 		return mv;
+		
+		//how to connect method with bracket?
+		public static void loadScientist(ArrayList<Scientist> teamScientist)
+		
+		
 	}
+	
+	
+	private static Team pickWinner(Team home, Team visitor) {
+	    RandomGenerator randomGenerator = new RandomGenerator();
+	    ArrayList<Team> thisGame = new ArrayList<Team>();
+	    thisGame.add(home);
+	    thisGame.add(visitor);
+	    //bring in scientist team list here? from team pojo?
+	    List<Team> winner = randomGenerator.randomize(thisGame, 1, true);
+//	    System.out.println("Winner of " + home.toString() + " vs " + visitor.toString() + " is " + winner.get(0).getName());
+	    return winner.get(0);
+	}
+	
+	
+
+private static ArrayList<Team> processBracket(ArrayList<Team> thisRound) {
+    ArrayList<Team> returnBracket = new ArrayList<Team>();
+    int start = 0;
+    int end = (thisRound.size() - 1);
+    while (start < end) {
+        Team winner = pickWinner(thisRound.get(start), thisRound.get(end));
+        returnBracket.add(winner);
+        start++;
+        end--;
+    }
+    return returnBracket;
+}
+	
+	
+	
 	
 
 	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database

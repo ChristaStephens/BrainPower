@@ -2,6 +2,10 @@ package brainpower.scientist.model;
 
 public class BinaryTree {
 	
+	private Scientist scientist;
+	private BracketNode opponent;
+	private BracketNode next; //loser stays null
+	
 	
     private static Node root;
 
