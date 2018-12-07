@@ -119,7 +119,7 @@ public class ScientistController {
 			return mv;
 		}
 
-		return new ModelAndView("redirect:/table");
+		return new ModelAndView("table", "scientists", scientistDao.findAll());
 	}
 
 	@RequestMapping("/table-show-all-high")

@@ -24,7 +24,7 @@ public class ScientistDao {
 
 	public List<Scientist> findAll() {
 
-		return em.createQuery("FROM Scientist", Scientist.class).getResultList();
+		return em.createQuery("FROM Scientist ORDER BY name ASC", Scientist.class).getResultList();
 	}
 
 	public Scientist findById(Long id) {
