@@ -112,7 +112,7 @@
 
 	<!-- Share buttons will clean up -->
 
-	<div id="share" style="text-align: center">
+	<div id="share">
 
 		<!-- Buffer -->
 		<a
