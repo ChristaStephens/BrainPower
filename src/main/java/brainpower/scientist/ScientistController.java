@@ -1,7 +1,8 @@
 package brainpower.scientist;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -23,7 +24,7 @@ import brainpower.scientist.model.ChuckResponse;
 import brainpower.scientist.model.Review;
 import brainpower.scientist.model.Scientist;
 import brainpower.scientist.model.StringParser;
-import brainpower.scientist.model.Team;
+//import brainpower.scientist.model.Team;
 import brainpower.scientist.model.Utility;
 import brainpower.scientist.model.WikiCrawler;
 
@@ -36,8 +37,8 @@ public class ScientistController {
 	WikiCrawler wikiCrawler;
 	@Autowired
 	ReviewDao reviewDao;
-	@Autowired
-	ScientistTeam scientistTeam;
+	// @Autowired
+	// ScientistTeam scientistTeam;
 
 	private RestTemplate restTemplateWithUserAgent;
 
@@ -65,12 +66,52 @@ public class ScientistController {
 
 		List<Scientist> scientists = scientistDao.findAll();
 		int r = Utility.getRandom(scientists.size());
-		String fact = StringParser.parseString(rep.getValue(), 
-				scientists.get(r).getName());
-		
+		String fact = StringParser.parseString(rep.getValue(), scientists.get(r).getName());
+
 		mv.addObject("scientist", scientists.get(r));
 		mv.addObject("chuck", rep);
 		mv.addObject("fact", fact);
+		return mv;
+	}
+
+	@RequestMapping("/alphabet-game")
+	public ModelAndView alphabetGamePage(HttpSession session,
+			@RequestParam(name = "number", required = false) Integer number) {
+		String url = "https://api.chucknorris.io/jokes/random?category=" + Utility.getCategory();
+		ChuckResponse rep = restTemplateWithUserAgent.getForObject(url, ChuckResponse.class);
+		ModelAndView mv = new ModelAndView("alphabetGame");
+		List<Character> letters = Utility.getLetter();
+		number = (Integer) session.getAttribute("number");
+
+		if (number == null) {
+			number = 0;
+			char letter = letters.get(number);
+			List<Scientist> list = scientistDao.findByAlphabet(letter);
+			System.out.println(number);
+			number++;
+			session.setAttribute("number", number);
+
+			mv.addObject("scientists", list.get(0));
+			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName());
+			mv.addObject("fact", fact);
+
+		} else if (number >= 0 && number < 24) {
+			char letter = letters.get(number);
+			List<Scientist> list = scientistDao.findByAlphabet(letter);
+			if (list.size() < 1) {
+				number++;
+				session.setAttribute("number", number);
+			return new ModelAndView("redirect:/alphabet-game");
+			}
+			number++;
+			session.setAttribute("number", number);
+			mv.addObject("scientists", list.get(0));
+			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName());
+			mv.addObject("fact", fact);
+		} else if (number == 24) {
+			session.invalidate();
+			return new ModelAndView("redirect:/table");
+		}
 		return mv;
 	}
 
@@ -92,14 +133,12 @@ public class ScientistController {
 			mv.addObject("fields", scientistDao.findAllFields());
 			mv.addObject("scientists", scientistDao.findByCountryAndField(country, field));
 			return mv;
-		}
-		else if (!(country.isEmpty()) && (field.isEmpty())) {
+		} else if (!(country.isEmpty()) && (field.isEmpty())) {
 			mv.addObject("allCountries", scientistDao.findAllCountries());
 			mv.addObject("fields", scientistDao.findAllFields());
-			mv.addObject( "scientists", scientistDao.findByCountry(country));
+			mv.addObject("scientists", scientistDao.findByCountry(country));
 			return mv;
-		}
-		else if ((country.isEmpty()) && !(field.isEmpty())) {
+		} else if ((country.isEmpty()) && !(field.isEmpty())) {
 			mv.addObject("allCountries", scientistDao.findAllCountries());
 			mv.addObject("fields", scientistDao.findAllFields());
 			mv.addObject("scientists", scientistDao.findByField(field));
@@ -125,15 +164,30 @@ public class ScientistController {
 
 	}
 
-	
-	@RequestMapping("/bracket")
-	//change "required" to "true" when table is mapped.
-	public ModelAndView showBracket( ) {
-		ModelAndView mv =new ModelAndView ("bracket");
-		List<Team> teams = scientistTeam.loadScientist(scientistDao.fillTournament());
-		scientistTeam.pickWinner(teams.get(0), teams.get(1));
+	@PostMapping("/submit2/{id}")
+	public ModelAndView gameSubmit(@PathVariable("id") Integer id,
+			@RequestParam(name = "strength", required = true) Integer strength, Scientist scientist) {
+		ModelAndView mv = new ModelAndView("redirect:/alphabet-game");
+		mv.addObject("strength", strength);
+		Review r = new Review(strength, scientist);
+		reviewDao.create(r);
+
+		Scientist s = scientistDao.findById(scientist.getId());
+		s.setStrength(reviewDao.findAverage(s));
+		scientistDao.update(s);
+
 		return mv;
-		
+
+	}
+
+//	@RequestMapping("/bracket")
+//	//change "required" to "true" when table is mapped.
+//	public ModelAndView showBracket( ) {
+//		ModelAndView mv =new ModelAndView ("bracket");
+//		List<Team> teams = scientistTeam.loadScientist(scientistDao.fillTournament());
+//		scientistTeam.pickWinner(teams.get(0), teams.get(1));
+//		return mv;
+
 //		load scientist
 //		
 //	    ArrayList<Team> roundOne = new ArrayList<Team>();
@@ -146,11 +200,7 @@ public class ScientistController {
 //	    
 //	    ArrayList<Team> roundWinner = processBracket(roundThree);
 //		
-	}
-	
-	
-	
-	
+	// }
 
 	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
 
