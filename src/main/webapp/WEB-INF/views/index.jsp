@@ -42,8 +42,6 @@
 		<h1>
 			<p class="scientist">
 				<img class="scientist" src="${scientist.image }" alt="${s.name }">
-				<img class="scientist" src="${scientist.image }"
-					src="${s.rationale }">
 			</p>
 			<H8>Fact:</H8>
 		</h1>

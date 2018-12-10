@@ -41,7 +41,7 @@
 						<span class="date">March 16</span>
 					</div>
 					<ul class="matchup">
-						<li class="team team-top">Bill Nye<span class="score">9.0</span></li>
+						<li class="team team-top"><span class="score">0</span></li>
 						<li class="team team-bottom">Virginia<span class="score">82</span></li>
 					</ul>
 					<ul class="matchup">
@@ -106,7 +106,7 @@
 						<span class="date">March 30 - Apr. 1</span>
 					</div>
 					<ul class="matchup championship">
-						<li class="team team-top">Maybe<span class="vote-count">&nbsp;</span></li>
+						<li class="team team-top">Chuck Norris <span class="vote-count">200</span></li>
 						<li class="team team-bottom">Maybe<span class="vote-count">&nbsp;</span></li>
 					</ul>
 				</div>
