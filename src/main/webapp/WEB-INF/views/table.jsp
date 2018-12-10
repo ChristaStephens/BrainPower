@@ -86,30 +86,7 @@
 
 
 
-		<div class="dropdown">
-			<button class="dropbtn">
-
-				<form action="/table-filter" method="post">
-					<select id="country" name="country">
-						<option selected="selected" value="" style="display: none">-Country-</option>
-						<c:forEach items="${ allCountries }" var="c">
-							<option>${ c }</option>
-						</c:forEach>
-					</select> <select id="field" name="field">
-						<option selected="selected" value="" style="display: none">-Field-</option>
-						<button type="submit" class="btn btn-primary mb-2 mr-2">
-							<c:forEach items="${ fields }" var="f">
-								<option>${ f }</option>
-							</c:forEach>
-						</button>
-					</select>
-
-
-					<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
-
-					<a href="/table">Clear Filter</a>
-				</form>
-		</div>
+		
 <!-- 		<div> -->
 <!-- 			<form action="/table-view-all"> -->
 <!-- 				<select id="viewAll" name="viewAll"> -->
