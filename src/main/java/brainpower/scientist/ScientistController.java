@@ -130,8 +130,8 @@ public class ScientistController {
 	//change "required" to "true" when table is mapped.
 	public ModelAndView showBracket( ) {
 		ModelAndView mv =new ModelAndView ("bracket");
-		List<Team> teams = scientistTeam.loadScientist(scientistDao.)
-		
+		List<Team> teams = scientistTeam.loadScientist(scientistDao.fillTournament());
+		scientistTeam.pickWinner(teams.get(0), teams.get(1));
 		return mv;
 		
 	}

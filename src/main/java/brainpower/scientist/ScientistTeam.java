@@ -15,10 +15,10 @@ public class ScientistTeam {
 
 	// how to connect method with bracket? does this go in pojo or dao?
 	// lol it rhymes
-	public static List<Team> loadScientist(ArrayList<Scientist> teamScientist) {
+	public static List<Team> loadScientist(List<Scientist> list2) {
 	List<Team> list = new ArrayList<>(); 
 	int i = 1;
-	for (Scientist s : teamScientist) {
+	for (Scientist s : list2) {
 		int num = (int) (Math.round( s.getStrength()));
 		Team t = new Team(s, num, i);
 		list.add(t);
@@ -27,11 +27,11 @@ public class ScientistTeam {
 	return list;
 	}
 
-	private static Team pickWinner(Team home, Team visitor) {
+	public static Team pickWinner(Team america, Team euro) {
 		RandomGenerator randomGenerator = new RandomGenerator();
 		ArrayList<Team> thisGame = new ArrayList<Team>();
-		thisGame.add(home);
-		thisGame.add(visitor);
+		thisGame.add(america);
+		thisGame.add(euro);
 		// bring in scientist team list here? from team pojo?
 		List<Team> winner = randomGenerator.randomize(thisGame, 1, true);
 //    System.out.println("Winner of " + home.toString() + " vs " + visitor.toString() + " is " + winner.get(0).getName());
