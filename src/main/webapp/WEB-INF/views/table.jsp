@@ -31,15 +31,14 @@
 						});
 	});
 </script>
-<<<<<<< HEAD
-=======
+
 
 <script>
 	$(document).ready(function() {
 		$('.tooltip').tooltipster();
 	});
 </script>
->>>>>>> c95371d90379289e219b25c44810eb0d630a4917
+
 <meta charset="UTF-8">
 <title>Scientist List</title>
 </head>
@@ -56,7 +55,7 @@
 				<a href="/table">Scientists</a>
 			</div>
 		</div>
-<<<<<<< HEAD
+
 
 	</div>
 	
@@ -84,7 +83,6 @@
 					<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
 					<a href="/table">Clear Filter</a>
 				</form>
-=======
 
 
 
@@ -133,7 +131,7 @@
 		
 			</c:if>
 	<c:if test="${ not empty scientists }">
->>>>>>> c95371d90379289e219b25c44810eb0d630a4917
+
 	<table class="tabledata" id="science">
 	
 		<tr>
@@ -148,10 +146,7 @@
 				<td><a target="blank" class="screenshot" href="${s.bioLink }"
 					data-tooltip="${s.image }" class="tooltip"> ${s.name }</a></td>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> c95371d90379289e219b25c44810eb0d630a4917
 				<td>${s.field}</td>
 				<td>${s.country}</td>
 				<td>${s.strength}</td>
