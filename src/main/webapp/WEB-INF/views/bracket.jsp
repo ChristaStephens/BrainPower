@@ -49,11 +49,15 @@
 					</div>
 					<ul class="matchup">
 
+
 						<li class="team team-top">${}<span class="score">9.0</span></li>
 
-						<li class="team team-top"><span class="score">0</span></li>
 
 						<li class="team team-bottom">Virginia<span class="score">82</span></li>
+
+						<li class="team team-top">${round1.get(0).getScientist().getName()}<span class="score">${round1.get(0).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round1.get(15).getScientist().getName()}<span class="score">${round1.get(15).getScientist().getStrength()}</span></li>
+
 					</ul>
 					<ul class="matchup">
 						<li class="team team-top">Wake Forest<span class="score">64</span></li>
