@@ -24,7 +24,7 @@ import brainpower.scientist.model.ChuckResponse;
 import brainpower.scientist.model.Review;
 import brainpower.scientist.model.Scientist;
 import brainpower.scientist.model.StringParser;
-//import brainpower.scientist.model.Team;
+import brainpower.scientist.model.Team;
 import brainpower.scientist.model.Utility;
 import brainpower.scientist.model.WikiCrawler;
 
@@ -37,8 +37,8 @@ public class ScientistController {
 	WikiCrawler wikiCrawler;
 	@Autowired
 	ReviewDao reviewDao;
-	// @Autowired
-	// ScientistTeam scientistTeam;
+	 @Autowired
+	 ScientistTeam scientistTeam;
 
 	private RestTemplate restTemplateWithUserAgent;
 
@@ -164,6 +164,7 @@ public class ScientistController {
 
 	}
 
+
 	@PostMapping("/submit2/{id}")
 	public ModelAndView gameSubmit(@PathVariable("id") Integer id,
 			@RequestParam(name = "strength", required = true) Integer strength, Scientist scientist) {
@@ -201,6 +202,27 @@ public class ScientistController {
 //	    ArrayList<Team> roundWinner = processBracket(roundThree);
 //		
 	// }
+
+	
+	@RequestMapping("/bracket")
+	//change "required" to "true" when table is mapped.
+	public ModelAndView showBracket( ) {
+		ModelAndView mv =new ModelAndView ("bracket");
+		List<Team> round1 = scientistTeam.loadScientist(scientistDao.fillTournament());
+		mv.addObject("round1", round1);
+		List<Team> round2 = scientistTeam.processBracket(round1);
+		mv.addObject("round2", round2);
+		List<Team> round3 = scientistTeam.processBracket(round2);
+		mv.addObject("round3", round3);
+		List <Team> champ = scientistTeam.processBracket(round3);
+		mv.addObject("champ", champ);
+		return mv;
+		
+		
+	}
+	
+	
+
 
 	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
 

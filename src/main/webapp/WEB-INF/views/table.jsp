@@ -32,11 +32,13 @@
 	});
 </script>
 
+
 <script>
 	$(document).ready(function() {
 		$('.tooltip').tooltipster();
 	});
 </script>
+
 <meta charset="UTF-8">
 <title>Scientist List</title>
 </head>
@@ -53,6 +55,34 @@
 				<a href="/table">Scientists</a>
 			</div>
 		</div>
+
+
+	</div>
+	
+	
+	<form action="/table-filter" method="post">
+	
+					<select id="country" name="country">
+						<option selected="selected" value="" style="display: none">-Country-</option>
+						<c:forEach items="${ allCountries }" var="c">
+							<option>${ c }</option>
+						</c:forEach>
+					</select> 
+					
+					<select id="field" name="field">
+						<option selected="selected" value="" style="display: none">-Field-</option>
+						<button type="submit" class="btn btn-primary mb-2 mr-2">
+							<c:forEach items="${ fields }" var="f">
+								<option>${ f }</option>
+							</c:forEach>
+						</button>
+					</select>
+					<button type="submit" class="btn btn-primary mb-2 mr-2">View
+						All</button>
+
+					<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
+					<a href="/table">Clear Filter</a>
+				</form>
 
 
 
@@ -101,11 +131,10 @@
 		
 			</c:if>
 	<c:if test="${ not empty scientists }">
+
 	<table class="tabledata" id="science">
 	
 		<tr>
-
-
 			<th>Name</th>
 			<th>Field</th>
 			<th>Country</th>
@@ -114,7 +143,6 @@
 		
 		<c:forEach var="s" items="${scientists }">
 			<tr>
-
 				<td><a target="blank" class="screenshot" href="${s.bioLink }"
 					data-tooltip="${s.image }" class="tooltip"> ${s.name }</a></td>
 
@@ -122,10 +150,6 @@
 				<td>${s.field}</td>
 				<td>${s.country}</td>
 				<td>${s.strength}</td>
-
-
-
-
 			</tr>
 		</c:forEach>
 
