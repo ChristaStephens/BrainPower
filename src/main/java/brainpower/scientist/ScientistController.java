@@ -134,6 +134,18 @@ public class ScientistController {
 		scientistTeam.pickWinner(teams.get(0), teams.get(1));
 		return mv;
 		
+//		load scientist
+//		
+//	    ArrayList<Team> roundOne = new ArrayList<Team>();
+//	    loadTeams(roundOne);
+//	    
+//	    
+//	    ArrayList<Team> roundTwo = processBracket(roundOne);
+//	    
+//	    ArrayList<Team> roundThree = processBracket(roundTwo);
+//	    
+//	    ArrayList<Team> roundWinner = processBracket(roundThree);
+//		
 	}
 	
 	

@@ -37,6 +37,10 @@ public class ScientistTeam {
 //    System.out.println("Winner of " + home.toString() + " vs " + visitor.toString() + " is " + winner.get(0).getName());
 		return winner.get(0);
 	}
+	
+	
+//	public List<T> randomize(List<T> tList, java.lang.Integer maxResults, Boolean useRating)
+	
 
 	private static ArrayList<Team> processBracket(ArrayList<Team> thisRound) {
 		ArrayList<Team> returnBracket = new ArrayList<Team>();
