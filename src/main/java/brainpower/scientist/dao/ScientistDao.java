@@ -117,5 +117,27 @@ public class ScientistDao {
 	public void update(Scientist scientist) {
 		em.merge(scientist);
 	}
+	
+//	public List<Scientist> findByAlphabet() {
+//		List<Scientist> list = null;
+//		char[] arr = {'a', 'b', 'c', 'd', 'e', 'f', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 
+//				'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+//		for(int i = 0; i< arr.length; i++) {
+//			list =  em.createQuery("FROM Scientist WHERE LOWER(name) LIKE'" + arr[i] + "%'", Scientist.class).getResultList();
+//			System.out.println(list);
+//		}
+//	
+//		return list;
+//	
+//		
+//	}
+	
+	public List<Scientist> findByAlphabet(char letter) {
+		List<Scientist> list =  em.createQuery("FROM Scientist WHERE LOWER(name) LIKE'" + letter + "%'", Scientist.class).getResultList();
+		System.out.println(list);
+		return list;
+	
+		
+	}
 
 }

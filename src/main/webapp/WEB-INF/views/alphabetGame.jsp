@@ -14,7 +14,7 @@
 <link type="text/css" rel="stylesheet" href="button.css">
 
 <meta charset="UTF-8">
-<title>Home</title>
+<title>Alphabet Game</title>
 </head>
 
 
@@ -22,6 +22,8 @@
 
 	<div class="navbar">
 		<a href="/">BrainPower</a>
+
+
 		<div class="dropdown">
 			<button class="dropbtn">
 				Power Rankings <i class="fa fa-caret-down"></i>
@@ -30,23 +32,22 @@
 			<div class="dropdown-content">
 				<a href="/table">Scientists</a> <a href="/bracket">Bracket</a>
 			</div>
-			
 		</div>
-		<a href="/alphabet-game">Alphabet</a>
 		<a href="/">About</a>
-		</div>
-		
 
-
-	
+	</div>
 
 	
-	<form method="post" action="submit/${ scientist.id }">
+
+	</form>
+	</div>
 
 
+<form method="post" action="submit2/${ scientists.getId() }">
 		<h1>
 			<p class="scientist">
-				<img class="scientist" src="${scientist.image }" alt="${s.name }">
+				<img class="scientist" src="${scientists.getImage() }" >
+				
 			</p>
 			<H8>Fact:</H8>
 		</h1>
@@ -56,7 +57,7 @@
 		<div class="container" style="text-align: center; width: 100%;">
 
 
-			<h1>How Strong is ${scientist.name } ?</h1>
+			<h1>How Strong is ${scientists.getName() } ?</h1>
 
 
 			<b>Weakling</b> <label class="radio-inline"> <input
@@ -116,7 +117,7 @@
 
 	<!-- Share buttons will clean up -->
 
-<h1>Like this Fact? Share on social media!</h1>
+<p> Like this Fact? Share on social media!</p>
 
 	<div id="share">
 
