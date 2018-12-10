@@ -113,6 +113,8 @@
 
 	<!-- Share buttons will clean up -->
 
+<p> Like this Fact? Share on social media!</p>
+
 	<div id="share">
 
 		<!-- Buffer -->
