@@ -130,25 +130,18 @@ public class ScientistController {
 	//change "required" to "true" when table is mapped.
 	public ModelAndView showBracket( ) {
 		ModelAndView mv =new ModelAndView ("bracket");
-		List<Team> teams = scientistTeam.loadScientist(scientistDao.fillTournament());
-		scientistTeam.pickWinner(teams.get(0), teams.get(1));
+		List<Team> round1 = scientistTeam.loadScientist(scientistDao.fillTournament());
+		mv.addObject("round1", round1);
+		List<Team> round2 = scientistTeam.processBracket(round1);
+		mv.addObject("round2", round2);
+		List<Team> round3 = scientistTeam.processBracket(round2);
+		mv.addObject("round3", round3);
+		List <Team> champ = scientistTeam.processBracket(round3);
+		mv.addObject("champ", champ);
 		return mv;
 		
-//		load scientist
-//		
-//	    ArrayList<Team> roundOne = new ArrayList<Team>();
-//	    loadTeams(roundOne);
-//	    
-//	    
-//	    ArrayList<Team> roundTwo = processBracket(roundOne);
-//	    
-//	    ArrayList<Team> roundThree = processBracket(roundTwo);
-//	    
-//	    ArrayList<Team> roundWinner = processBracket(roundThree);
-//		
+		
 	}
-	
-	
 	
 	
 

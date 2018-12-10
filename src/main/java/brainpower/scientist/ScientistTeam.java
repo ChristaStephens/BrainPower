@@ -28,8 +28,8 @@ public class ScientistTeam {
 	}
 
 	public static Team pickWinner(Team america, Team euro) {
-		RandomGenerator randomGenerator = new RandomGenerator();
-		ArrayList<Team> thisGame = new ArrayList<Team>();
+		RandomGenerator<Team> randomGenerator = new RandomGenerator<Team>();
+		List<Team> thisGame = new ArrayList<Team>();
 		thisGame.add(america);
 		thisGame.add(euro);
 		// bring in scientist team list here? from team pojo?
@@ -39,11 +39,13 @@ public class ScientistTeam {
 	}
 	
 	
-//	public List<T> randomize(List<T> tList, java.lang.Integer maxResults, Boolean useRating)
+	public List<Team> randomize(List<Team> tList, java.lang.Integer maxResults, Boolean useRating){
+		return tList;
+	}
 	
 
-	private static ArrayList<Team> processBracket(ArrayList<Team> thisRound) {
-		ArrayList<Team> returnBracket = new ArrayList<Team>();
+	public static List<Team> processBracket(List<Team> thisRound) {
+		List<Team> returnBracket = new ArrayList<Team>();
 		int start = 0;
 		int end = (thisRound.size() - 1);
 		while (start < end) {

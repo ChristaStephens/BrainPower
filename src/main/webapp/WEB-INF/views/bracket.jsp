@@ -48,20 +48,24 @@
 						Round 1<br /> <span class="date">March 16</span>
 					</div>
 					<ul class="matchup">
-						<li class="team team-top"><span class="score">0</span></li>
-						<li class="team team-bottom">Virginia<span class="score">82</span></li>
+
+
+						<li class="team team-top">${round1.get(0).getScientist().getName()}<span class="score">${round1.get(0).getScientist().getStrength()}</span></li>
+						<li class="team team-top">${round1.get(15).getScientist().getName()}<span class="score">${round1.get(15).getScientist().getStrength()}</span></li>
+
+
 					</ul>
 					<ul class="matchup">
-						<li class="team team-top">Wake Forest<span class="score">64</span></li>
-						<li class="team team-bottom">Clemson<span class="score">56</span></li>
+						<li class="team team-top">${round1.get(8).getScientist().getName()}<span class="score">${round1.get(8).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round1.get(7).getScientist().getName()}<span class="score">${round1.get(7).getScientist().getStrength()}</span></li>
 					</ul>
 					<ul class="matchup">
-						<li class="team team-top">North Carolina<span class="score">68</span></li>
-						<li class="team team-bottom">Florida State<span class="score">54</span></li>
+						<li class="team team-top">${round1.get(4).getScientist().getName()}<span class="score">${round1.get(4).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round1.get(11).getScientist().getName()}<span class="score">${round1.get(11).getScientist().getStrength()}</span></li>
 					</ul>
 					<ul class="matchup">
-						<li class="team team-top">NC State<span class="score">74</span></li>
-						<li class="team team-bottom">Maryland<span class="score">92</span></li>
+						<li class="team team-top">${round1.get(12).getScientist().getName()}<span class="score">${round1.get(12).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round1.get(3).getScientist().getName()}<span class="score">${round1.get(3).getScientist().getStrength()}</span></li>
 					</ul>
 				</div>
 				<!-- END ROUND ONE -->
@@ -71,12 +75,12 @@
 						Round 2<br /> <span class="date">March 18</span>
 					</div>
 					<ul class="matchup">
-						<li class="team team-top">Detroit<span class="score">&nbsp;</span></li>
-						<li class="team team-bottom">Detroit<span class="score">&nbsp;</span></li>
+						<li class="team team-top">${round2.get(0).getScientist().getName()}<span class="score">${round2.get(0).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round2.get(7).getScientist().getName()}<span class="score">${round2.get(7).getScientist().getStrength()}</span></li>
 					</ul>
 					<ul class="matchup">
-						<li class="team team-top">detroit<span class="score">&nbsp;</span></li>
-						<li class="team team-bottom">detroit<span class="score">&nbsp;</span></li>
+						<li class="team team-top">${round2.get(4).getScientist().getName()}<span class="score">${round2.get(4).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round2.get(3).getScientist().getName()}<span class="score">${round2.get(3).getScientist().getStrength()}</span></li>
 					</ul>
 				</div>
 				<!-- END ROUND TWO -->
@@ -86,8 +90,8 @@
 						Round 3<br /> <span class="date">March 22</span>
 					</div>
 					<ul class="matchup">
-						<li class="team team-top">Detroit<span class="score">&nbsp;</span></li>
-						<li class="team team-bottom">Detroit<span class="score">&nbsp;</span></li>
+						<li class="team team-top">${round3.get(0).getScientist().getName()}<span class="score">${round3.get(0).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round3.get(3).getScientist().getName()}<span class="score">${round3.get(3).getScientist().getStrength()}</span></li>
 					</ul>
 
 				</div>
@@ -102,9 +106,9 @@
 						championship <br /> <span class="date">March 30 - Apr. 1</span>
 					</div>
 					<ul class="matchup championship">
-						<li class="team team-top">Chuck Norris <span
-							class="vote-count">200</span></li>
-						<li class="team team-bottom">Maybe<span class="vote-count">&nbsp;</span></li>
+						<li class="team team-top">${champ.get(0).getScientist().getName()} <span
+							class="vote-count">${champ.get(0).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${champ.get(1).getScientist().getName()}<span class="vote-count">${champ.get(1).getScientist().getStrength()}</span></li>
 					</ul>
 				</div>
 			</div>
@@ -114,8 +118,8 @@
 						Round 3<br /> <span class="date">March 22</span>
 					</div>
 					<ul class="matchup">
-						<li class="team team-top">detroit<span class="score">&nbsp;</span></li>
-						<li class="team team-bottom">detroit<span class="score">&nbsp;</span></li>
+						<li class="team team-top">${round3.get(2).getScientist().getName()}<span class="score">${round3.get(2).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round3.get(1).getScientist().getName()}<span class="score">${round3.get(1).getScientist().getStrength()}</span></li>
 					</ul>
 
 				</div>
@@ -126,12 +130,12 @@
 						Round 2<br /> <span class="date">March 18</span>
 					</div>
 					<ul class="matchup">
-						<li class="team team-top">detroit<span class="score">&nbsp;</span></li>
-						<li class="team team-bottom">detroit<span class="score">&nbsp;</span></li>
+						<li class="team team-top">${round2.get(2).getScientist().getName()}<span class="score">${round2.get(2).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round2.get(5).getScientist().getName()}<span class="score">${round2.get(5).getScientist().getStrength()}</span></li>
 					</ul>
 					<ul class="matchup">
-						<li class="team team-top">detroit<span class="score">&nbsp;</span></li>
-						<li class="team team-bottom">detroit<span class="score">&nbsp;</span></li>
+						<li class="team team-top">${round2.get(6).getScientist().getName()}<span class="score">${round2.get(6).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round2.get(1).getScientist().getName()}<span class="score">${round2.get(1).getScientist().getStrength()}</span></li>
 					</ul>
 
 				</div>
@@ -141,20 +145,20 @@
 						Round 1<br /> <span class="date">March 16</span>
 					</div>
 					<ul class="matchup">
-						<li class="team team-top">Minnesota<span class="score">62</span></li>
-						<li class="team team-bottom">Northwestern<span class="score">54</span></li>
+						<li class="team team-top">${round1.get(2).getScientist().getName()}<span class="score">${round1.get(2).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round1.get(13).getScientist().getName()}<span class="score">${round1.get(13).getScientist().getStrength()}</span></li>
 					</ul>
 					<ul class="matchup">
-						<li class="team team-top">Michigan<span class="score">68</span></li>
-						<li class="team team-bottom">Iowa<span class="score">66</span></li>
+						<li class="team team-top">${round1.get(5).getScientist().getName()}<span class="score">${round1.get(5).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round1.get(10).getScientist().getName()}<span class="score">${round1.get(10).getScientist().getStrength()}</span></li>
 					</ul>
 					<ul class="matchup">
-						<li class="team team-top">Illinois<span class="score">64</span></li>
-						<li class="team team-bottom">Wisconsin<span class="score">56</span></li>
+						<li class="team team-top">${round1.get(6).getScientist().getName()}<span class="score">${round1.get(6).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round1.get(9).getScientist().getName()}<span class="score">${round1.get(9).getScientist().getStrength()}</span></li>
 					</ul>
 					<ul class="matchup">
-						<li class="team team-top">Purdue<span class="score">36</span></li>
-						<li class="team team-bottom">Boise State<span class="score">40</span></li>
+						<li class="team team-top">${round1.get(1).getScientist().getName()}<span class="score">${round1.get(1).getScientist().getStrength()}</span></li>
+						<li class="team team-bottom">${round1.get(14).getScientist().getName()}<span class="score">${round1.get(14).getScientist().getStrength()}</span></li>
 					</ul>
 
 				</div>
