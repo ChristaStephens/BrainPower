@@ -49,7 +49,7 @@
 					</div>
 					<ul class="matchup">
 
-						<li class="team team-top">${round1.get(0).getScientist().getName()}<span class="score">9.0</span></li>
+						<li class="team team-top">${}<span class="score">9.0</span></li>
 
 						<li class="team team-top"><span class="score">0</span></li>
 
