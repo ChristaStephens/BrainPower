@@ -41,7 +41,7 @@
 						<span class="date">March 16</span>
 					</div>
 					<ul class="matchup">
-						<li class="team team-top">Bill Nye<span class="score">9.0</span></li>
+						<li class="team team-top">${round1.get(0).getSeed}<span class="score">9.0</span></li>
 						<li class="team team-bottom">Virginia<span class="score">82</span></li>
 					</ul>
 					<ul class="matchup">

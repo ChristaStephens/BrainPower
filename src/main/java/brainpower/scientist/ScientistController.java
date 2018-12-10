@@ -131,30 +131,14 @@ public class ScientistController {
 	public ModelAndView showBracket( ) {
 		ModelAndView mv =new ModelAndView ("bracket");
 		List<Team> round1 = scientistTeam.loadScientist(scientistDao.fillTournament());
-		for(Team s : round1) {
-			System.out.println("Name: " + s.getScientist().getName() + "\n" + "Seed: "
-		+ s.getSeed());
-		}
+		mv.addObject("round1", round1);
 		List<Team> round2 = scientistTeam.processBracket(round1);
-		System.out.println(round2.size());
-		for(Team s : round2) {
-			System.out.println(s.getScientist().getName() + "\n" + "Seed: "
-					+ s.getSeed());
-		}
+		
+	
+		
 		return mv;
 		
-//		load scientist
-//		
-//	    ArrayList<Team> roundOne = new ArrayList<Team>();
-//	    loadTeams(roundOne);
-//	    
-//	    
-//	    ArrayList<Team> roundTwo = processBracket(roundOne);
-//	    
-//	    ArrayList<Team> roundThree = processBracket(roundTwo);
-//	    
-//	    ArrayList<Team> roundWinner = processBracket(roundThree);
-//		
+		
 	}
 	
 	
