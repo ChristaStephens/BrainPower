@@ -15,12 +15,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gitlab.johnjvester.randomizer.RandomGenerator;
+
 import brainpower.scientist.dao.ReviewDao;
 import brainpower.scientist.dao.ScientistDao;
 import brainpower.scientist.model.ChuckResponse;
 import brainpower.scientist.model.Review;
 import brainpower.scientist.model.Scientist;
 import brainpower.scientist.model.StringParser;
+import brainpower.scientist.model.Team;
 import brainpower.scientist.model.Utility;
 import brainpower.scientist.model.WikiCrawler;
 
@@ -33,6 +36,8 @@ public class ScientistController {
 	WikiCrawler wikiCrawler;
 	@Autowired
 	ReviewDao reviewDao;
+	@Autowired
+	ScientistTeam scientistTeam;
 
 	private RestTemplate restTemplateWithUserAgent;
 
@@ -125,8 +130,26 @@ public class ScientistController {
 	//change "required" to "true" when table is mapped.
 	public ModelAndView showBracket( ) {
 		ModelAndView mv =new ModelAndView ("bracket");
+		List<Team> teams = scientistTeam.loadScientist(scientistDao.fillTournament());
+		scientistTeam.pickWinner(teams.get(0), teams.get(1));
 		return mv;
+		
+//		load scientist
+//		
+//	    ArrayList<Team> roundOne = new ArrayList<Team>();
+//	    loadTeams(roundOne);
+//	    
+//	    
+//	    ArrayList<Team> roundTwo = processBracket(roundOne);
+//	    
+//	    ArrayList<Team> roundThree = processBracket(roundTwo);
+//	    
+//	    ArrayList<Team> roundWinner = processBracket(roundThree);
+//		
 	}
+	
+	
+	
 	
 
 	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database

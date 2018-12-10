@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +31,15 @@
 						});
 	});
 </script>
+<<<<<<< HEAD
+=======
+
+<script>
+	$(document).ready(function() {
+		$('.tooltip').tooltipster();
+	});
+</script>
+>>>>>>> c95371d90379289e219b25c44810eb0d630a4917
 <meta charset="UTF-8">
 <title>Scientist List</title>
 </head>
@@ -46,6 +56,7 @@
 				<a href="/table">Scientists</a>
 			</div>
 		</div>
+<<<<<<< HEAD
 
 	</div>
 	
@@ -73,18 +84,74 @@
 					<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
 					<a href="/table">Clear Filter</a>
 				</form>
+=======
+
+
+
+		<div class="dropdown">
+			<button class="dropbtn">
+
+				<form action="/table-filter" method="post">
+					<select id="country" name="country">
+						<option selected="selected" value="" style="display: none">-Country-</option>
+						<c:forEach items="${ allCountries }" var="c">
+							<option>${ c }</option>
+						</c:forEach>
+					</select> <select id="field" name="field">
+						<option selected="selected" value="" style="display: none">-Field-</option>
+						<button type="submit" class="btn btn-primary mb-2 mr-2">
+							<c:forEach items="${ fields }" var="f">
+								<option>${ f }</option>
+							</c:forEach>
+						</button>
+					</select>
+
+
+					<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
+
+					<a href="/table">Clear Filter</a>
+				</form>
+		</div>
+<!-- 		<div> -->
+<!-- 			<form action="/table-view-all"> -->
+<!-- 				<select id="viewAll" name="viewAll"> -->
+<!-- 					<option selected="selected" value="" style="display: none">-View -->
+<!-- 						All-</option> -->
+<!-- 					<option value="alpha">A-Z</option> -->
+<!-- 					<option value="High">Strongest</option> -->
+<!-- 					<option value="low">Weakest</option> -->
+<!-- 				</select> -->
+<!-- 			</form> -->
+
+<!-- 		</div> -->
+	</div>
+
+
+
+	<c:if test="${ empty scientists }">
+		<center><h1>Your search didn't return any results!</h1></center>
+		
+			</c:if>
+	<c:if test="${ not empty scientists }">
+>>>>>>> c95371d90379289e219b25c44810eb0d630a4917
 	<table class="tabledata" id="science">
+	
 		<tr>
 			<th>Name</th>
 			<th>Field</th>
 			<th>Country</th>
 			<th>Strength</th>
 		</tr>
+		
 		<c:forEach var="s" items="${scientists }">
 			<tr>
 				<td><a target="blank" class="screenshot" href="${s.bioLink }"
 					data-tooltip="${s.image }" class="tooltip"> ${s.name }</a></td>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c95371d90379289e219b25c44810eb0d630a4917
 				<td>${s.field}</td>
 				<td>${s.country}</td>
 				<td>${s.strength}</td>
@@ -92,7 +159,7 @@
 		</c:forEach>
 
 	</table>
-
+</c:if>
 
 </body>
 </html>
