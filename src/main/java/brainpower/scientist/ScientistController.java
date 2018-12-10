@@ -136,8 +136,11 @@ public class ScientistController {
 		mv.addObject("round2", round2);
 		List<Team> round3 = scientistTeam.processBracket(round2);
 		mv.addObject("round3", round3);
-		List <Team> champ = scientistTeam.processBracket(round3);
+		List<Team> champ = scientistTeam.processBracket(round3);
 		mv.addObject("champ", champ);
+		List<Team> winner = scientistTeam.processBracket(champ);
+		mv.addObject("winner", winner);
+		
 		return mv;
 		
 		

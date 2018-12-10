@@ -22,8 +22,6 @@
 
 	<div class="navbar">
 		<a href="/">BrainPower</a>
-
-
 		<div class="dropdown">
 			<button class="dropbtn">
 				Power Rankings <i class="fa fa-caret-down"></i>
@@ -111,7 +109,7 @@
 
 	<!-- Share buttons will clean up -->
 
-<p> Like this Fact? Share on social media!</p>
+<h1>Like this Fact? Share on social media!</h1>
 
 	<div id="share">
 

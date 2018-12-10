@@ -77,9 +77,6 @@ body {
 }
 
 
-<!--picture card -->
-
-
 <!-- next button -->
 
 .button a{
@@ -201,8 +198,8 @@ img:hover {
 }
 .factss{
 	color: white;
-	padding-left:200px;
-	padding-right:200px;
+	padding-left:px;
+	padding-right:px;
 }
 
 

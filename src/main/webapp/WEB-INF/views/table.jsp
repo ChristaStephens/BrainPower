@@ -52,7 +52,7 @@
 				Power Rankings <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="/table">Scientists</a>
+				<a href="/table">Scientists</a><a href="/bracket">Bracket</a>
 			</div>
 		</div>
 
@@ -60,7 +60,7 @@
 	</div>
 	
 	
-	<form action="/table-filter" method="post">
+	<form class="tablefilter" action="/table-filter" method="post">
 	
 					<select id="country" name="country">
 						<option selected="selected" value="" style="display: none">-Country-</option>

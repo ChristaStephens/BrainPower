@@ -1,10 +1,11 @@
 @charset "UTF-8";
 body {
-	font-family: 'Istok Web', sans-serif;
+	font-family: "Times New Roman", Times, serif;
 	background: url("http://picjumbo.com/wp-content/uploads/HNCK2189-1300x866.jpg") no-repeat #000;
 	background-size: cover;
 	min-height: 100%;
 	margin: 0;
+	
 }
 .hero {
 	position:relative;
@@ -77,6 +78,7 @@ body {
 	display: flex;
 	-webkit-flex-direction:row;
 	flex-direction: row;
+	font-size: 1px;
 	
 	}
 	
@@ -172,8 +174,8 @@ body {
 	}
 	
 .team {
-	
-	padding: 0 5px;
+	font-size: 1px;
+	padding: 0 10px;
 	margin: 3px 0;
 	height: 25px;
 	line-height: 25px;
@@ -388,4 +390,71 @@ body {
   .hero-wrap {padding: 2.5em;}
   .hero p.year {margin: 5px 0 10px; font-size: 18px;}
 
+}
+
+
+.navbar {
+    overflow: hidden;
+    background-color: #4d4d4d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #7070db;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown .option{
+	
+	color: black;
 }
