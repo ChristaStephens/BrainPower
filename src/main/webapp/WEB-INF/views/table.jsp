@@ -60,7 +60,7 @@
 		<a href="/">About</a>
 		</div>
 	
-	
+	<!-- Scientist table filter -->
 	<form class="tablefilter" action="/table-filter" method="post">
 	
 					<select id="country" name="country">
@@ -93,7 +93,7 @@
 		
 			</c:if>
 	<c:if test="${ not empty scientists }">
-
+<!-- Scientist table -->
 	<table class="tabledata" id="science">
 	
 		<tr>
