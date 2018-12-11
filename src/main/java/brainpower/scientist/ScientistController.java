@@ -23,6 +23,7 @@ import brainpower.scientist.dao.ScientistDao;
 import brainpower.scientist.model.ChuckResponse;
 import brainpower.scientist.model.Review;
 import brainpower.scientist.model.Scientist;
+import brainpower.scientist.model.ScientistTeam;
 import brainpower.scientist.model.StringParser;
 import brainpower.scientist.model.Team;
 import brainpower.scientist.model.Utility;
@@ -37,8 +38,8 @@ public class ScientistController {
 	WikiCrawler wikiCrawler;
 	@Autowired
 	ReviewDao reviewDao;
-	 @Autowired
-	 ScientistTeam scientistTeam;
+	@Autowired
+	ScientistTeam scientistTeam;
 
 	private RestTemplate restTemplateWithUserAgent;
 
@@ -66,7 +67,8 @@ public class ScientistController {
 
 		List<Scientist> scientists = scientistDao.findAll();
 		int r = Utility.getRandom(scientists.size());
-		String fact = StringParser.parseString(rep.getValue(), scientists.get(r).getName());
+		System.out.println(scientists.get(r).getAltPro());
+		String fact = StringParser.parseString(rep.getValue(), scientists.get(r).getName(), scientists.get(r).getAltPro());
 
 		mv.addObject("scientist", scientists.get(r));
 		mv.addObject("chuck", rep);
@@ -92,7 +94,7 @@ public class ScientistController {
 			session.setAttribute("number", number);
 
 			mv.addObject("scientists", list.get(0));
-			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName());
+			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName(), list.get(0).getAltPro());
 			mv.addObject("fact", fact);
 
 		} else if (number >= 0 && number < 24) {
@@ -101,12 +103,12 @@ public class ScientistController {
 			if (list.size() < 1) {
 				number++;
 				session.setAttribute("number", number);
-			return new ModelAndView("redirect:/alphabet-game");
+				return new ModelAndView("redirect:/alphabet-game");
 			}
 			number++;
 			session.setAttribute("number", number);
 			mv.addObject("scientists", list.get(0));
-			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName());
+			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName(), list.get(0).getAltPro());
 			mv.addObject("fact", fact);
 		} else if (number == 24) {
 			session.invalidate();
@@ -164,7 +166,6 @@ public class ScientistController {
 
 	}
 
-
 	@PostMapping("/submit2/{id}")
 	public ModelAndView gameSubmit(@PathVariable("id") Integer id,
 			@RequestParam(name = "strength", required = true) Integer strength, Scientist scientist) {
@@ -181,33 +182,10 @@ public class ScientistController {
 
 	}
 
-//	@RequestMapping("/bracket")
-//	//change "required" to "true" when table is mapped.
-//	public ModelAndView showBracket( ) {
-//		ModelAndView mv =new ModelAndView ("bracket");
-//		List<Team> teams = scientistTeam.loadScientist(scientistDao.fillTournament());
-//		scientistTeam.pickWinner(teams.get(0), teams.get(1));
-//		return mv;
-
-//		load scientist
-//		
-//	    ArrayList<Team> roundOne = new ArrayList<Team>();
-//	    loadTeams(roundOne);
-//	    
-//	    
-//	    ArrayList<Team> roundTwo = processBracket(roundOne);
-//	    
-//	    ArrayList<Team> roundThree = processBracket(roundTwo);
-//	    
-//	    ArrayList<Team> roundWinner = processBracket(roundThree);
-//		
-	// }
-
-	
 	@RequestMapping("/bracket")
-	//change "required" to "true" when table is mapped.
-	public ModelAndView showBracket( ) {
-		ModelAndView mv =new ModelAndView ("bracket");
+	// change "required" to "true" when table is mapped.
+	public ModelAndView showBracket() {
+		ModelAndView mv = new ModelAndView("bracket");
 		List<Team> round1 = scientistTeam.loadScientist(scientistDao.fillTournament());
 		mv.addObject("round1", round1);
 		List<Team> round2 = scientistTeam.processBracket(round1);
@@ -218,14 +196,10 @@ public class ScientistController {
 		mv.addObject("champ", champ);
 		List<Team> winner = scientistTeam.processBracket(champ);
 		mv.addObject("winner", winner);
-		
-		return mv;
-		
-		
-	}
-	
-	
 
+		return mv;
+
+	}
 
 	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
 
