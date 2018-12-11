@@ -28,7 +28,7 @@
 <body>
 
 
-<div class="navbar">
+	<div class="navbar">
 		<a href="/">BrainPower</a>
 		<div class="dropdown">
 			<button class="dropbtn">
@@ -38,10 +38,11 @@
 			<div class="dropdown-content">
 				<a href="/table">Scientists</a> <a href="/bracket">Bracket</a>
 			</div>
+			
 		</div>
+		<a href="/alphabet-game">Alphabet Game</a>
 		<a href="/">About</a>
-
-	</div>
+		</div>
 
 
 	<header class="hero">
@@ -96,7 +97,7 @@
 				<!-- END ROUND ONE -->
 
                 <!-- QUARTER FINALS -->
-				<div class="round round-two">
+				<div class="round round-two current">
 					<div class="round-details">
 						Quarter Finals<br /> <span class="date">March 18</span>
 					</div>
@@ -117,7 +118,7 @@
 				
 				<!-- SEMI FINALS -->
 
-				<div class="round round-three">
+				<div class="round round-three current">
 					<div class="round-details">
 						Semi-Finals<br /> <span class="date">March 22</span>
 					</div>
@@ -136,10 +137,10 @@
 			
 			<!-- CHAMPION -->
 
-			<div class="champion">
+			<div class="champion current">
 			<i class="fa fa-trophy"></i>
 				<div class="semis-l">
-					<div class="round-details">
+					<div class="round-details current">
 						Champion<br/> <span class="date"></span>
 					</div>
 					<ul class="matchup championship">
@@ -151,7 +152,7 @@
 				<!-- END CHAMPION -->
 				
 				<!-- FINAL -->
-				<div class="final">
+				<div class="final current">
 					
 					<div class="round-details">
 						Final <br /> <span class="date">March 26-28</span>
@@ -169,7 +170,7 @@
 			
 			<!-- SEMI FINALS -->
 			<div class="split split-two">
-				<div class="round round-three">
+				<div class="round round-three current">
 					<div class="round-details">
 						Semi-Finals<br /> <span class="date">March 22</span>
 					</div>
@@ -184,7 +185,7 @@
 				<!-- END SEMI FINALS -->
 				
 				<!-- QUARTER FINALS -->
-				<div class="round round-two">
+				<div class="round round-two current">
 					<div class="round-details">
 						Quarter Finals<br /> <span class="date">March 18</span>
 					</div>

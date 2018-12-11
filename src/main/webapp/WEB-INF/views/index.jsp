@@ -32,7 +32,7 @@
 			</div>
 			
 		</div>
-		<a href="/alphabet-game">Alphabet</a>
+		<a href="/alphabet-game">Alphabet Game</a>
 		<a href="/">About</a>
 		</div>
 		
@@ -48,7 +48,7 @@
 			<p class="scientist">
 				<img class="scientist" src="${scientist.image }" alt="${s.name }">
 			</p>
-			<H8>Fact:</H8>
+			<H8 class="fact" >Fact:</H8>
 		</h1>
 
 		<h1 class="factss" id="fact">${fact}</h1>
@@ -56,10 +56,10 @@
 		<div class="container" style="text-align: center; width: 100%;">
 
 
-			<h1>How Strong is ${scientist.name } ?</h1>
+			<h1 class="fact">How Strong is ${scientist.name } ?</h1>
 
 
-			<b>Weakling</b> <label class="radio-inline"> <input
+			<b id="strengthtitle">Weakling</b> <label class="radio-inline"> <input
 				type="radio" name="strength" value="1" checked>
 			</label> <label class="radio-inline"> <input type="radio"
 				name="strength" value="2"><b>2</b>
@@ -78,7 +78,7 @@
 			</label> <label class="radio-inline"> <input type="radio"
 				name="strength" value="9"><b>9</b>
 			</label> <label class="radio-inline"> <input type="radio"
-				name="strength" value="10"><b>Chuck Norris</b>
+				name="strength" value="10"><b id="strengthtitle" >Chuck Norris</b>
 			</label> <input type="hidden" name="scientistID" value="${scientist.id }">
 			<br>
 			<div style="text-align: center">

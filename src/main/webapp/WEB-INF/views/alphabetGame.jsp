@@ -22,8 +22,6 @@
 
 	<div class="navbar">
 		<a href="/">BrainPower</a>
-
-
 		<div class="dropdown">
 			<button class="dropbtn">
 				Power Rankings <i class="fa fa-caret-down"></i>
@@ -32,10 +30,11 @@
 			<div class="dropdown-content">
 				<a href="/table">Scientists</a> <a href="/bracket">Bracket</a>
 			</div>
+			
 		</div>
+		<a href="/alphabet-game">Alphabet Game</a>
 		<a href="/">About</a>
-
-	</div>
+		</div>
 
 	
 

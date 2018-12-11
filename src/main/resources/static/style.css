@@ -23,6 +23,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    text-shadow: 0 2px 12px #5CCA87;
 }
 
 .dropdown {
@@ -39,10 +40,11 @@ body {
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    text-shadow: 0 2px 12px #5CCA87;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #7070db;
+    background-color: #5CCA87;
 }
 
 .dropdown-content {
@@ -176,7 +178,7 @@ tr:hover {background-color: #aaacac;}
   padding: 16px 32px;
 }
 
-b{
+#strengthtitle{
 	text-color: white;
 }
 
@@ -194,12 +196,18 @@ b{
 }
 
 img:hover {
-  box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.5);
+  box-shadow: 0 0 2px 5px #5CCA87;
 }
 .factss{
-	color: white;
+	color: black;
 	padding-left:px;
 	padding-right:px;
+	text-shadow: 0 0 3px #5CCA87;
+}
+
+.fact{
+	text-shadow: 0 0 3px #5CCA87;
+	
 }
 
 
