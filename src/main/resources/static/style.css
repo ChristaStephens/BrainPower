@@ -11,7 +11,7 @@ body {
 }
 
 
-<!-- NavBar -->
+
 .navbar {
     overflow: hidden;
     background-color: #4d4d4d;
@@ -81,7 +81,7 @@ body {
 }
 
 
-<!-- next button -->
+
 
 .button a{
 	color: white;
@@ -89,7 +89,7 @@ body {
 	
 }
 
-<!-- table -->
+
 
 table {
     border-collapse: collapse;
@@ -124,7 +124,7 @@ th {
 
 tr:hover {background-color: #aaacac;}
 
-<!-- share buttons --> 
+
 
  #petty{
 	 width:25px;
