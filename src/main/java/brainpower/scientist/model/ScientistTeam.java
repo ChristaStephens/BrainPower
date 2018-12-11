@@ -1,4 +1,4 @@
-package brainpower.scientist;
+package brainpower.scientist.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,6 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.gitlab.johnjvester.randomizer.RandomGenerator;
-
-import brainpower.scientist.model.Scientist;
-import brainpower.scientist.model.Team;
 
 @Component
 public class ScientistTeam {

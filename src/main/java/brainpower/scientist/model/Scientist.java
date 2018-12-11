@@ -1,16 +1,11 @@
 package brainpower.scientist.model;
 
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -31,14 +26,10 @@ public class Scientist {
 	private String field;
 	@Column(name = "bio_link")
 	private String bioLink;
-	
-//	@OneToMany(mappedBy = "scientist")
-//	private Set<Review> reviews;
-	
-	@ManyToOne
-	@JoinColumn(name = "bracket_id")
-	private Bracket bracket;
-	
+	@Column(name = "alt_pro")
+	private Boolean altPro;
+
+
 	public Scientist() {}
 	
 	public Scientist(String year, String name, String image, String country, 
@@ -51,6 +42,14 @@ public class Scientist {
 		this.rationale = rationale;
 		this.field = field;
 		this.bioLink = bioLink;
+	}
+
+	public Boolean getAltPro() {
+		return altPro;
+	}
+
+	public void altPro(Boolean altPro) {
+		this.altPro = altPro;
 	}
 	
 
