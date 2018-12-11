@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-	font-family: "Times New Roman", Times, serif;
+	font-family: 'Istok Web', sans-serif;
 	background: url("http://picjumbo.com/wp-content/uploads/HNCK2189-1300x866.jpg") no-repeat #000;
 	background-size: cover;
 	min-height: 100%;
@@ -174,8 +174,8 @@ body {
 	}
 	
 .team {
-	font-size: 1px;
-	padding: 0 10px;
+	
+	padding: 0 5px;
 	margin: 3px 0;
 	height: 25px;
 	line-height: 25px;

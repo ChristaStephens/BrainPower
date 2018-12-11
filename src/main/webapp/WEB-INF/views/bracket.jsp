@@ -59,13 +59,15 @@
 	<section id="bracket">
 		<div class="container">
 			<div class="split split-one">
+			
+			
+			    <!-- ROUND ONE -->
 				<div class="round round-one current">
 					<div class="round-details">
 						Round 1<br /> <span class="date">March 16</span>
 					</div>
 					<ul class="matchup">
-                         <!-- ROUND ONE -->
-
+					
 						<li class="team team-top">${round1.get(0).getScientist().getName()}<span
 							class="score">${round1.get(0).getScientist().getStrength()}</span></li>
 						<li class="team team-top">${round1.get(15).getScientist().getName()}<span
@@ -93,6 +95,7 @@
 				</div>
 				<!-- END ROUND ONE -->
 
+                <!-- QUARTER FINALS -->
 				<div class="round round-two">
 					<div class="round-details">
 						Quarter Finals<br /> <span class="date">March 18</span>
@@ -111,6 +114,8 @@
 					</ul>
 				</div>
 				<!-- END QUARTER FINALS -->
+				
+				<!-- SEMI FINALS -->
 
 				<div class="round round-three">
 					<div class="round-details">
@@ -126,8 +131,10 @@
 					</ul>
 
 				</div>
-				<!-- END SEMI FINALS -->
 			</div>
+			<!-- END SEMI FINALS -->
+			
+			<!-- CHAMPION -->
 
 			<div class="champion">
 			<i class="fa fa-trophy"></i>
@@ -141,6 +148,9 @@
 
 					</ul>
 				</div>
+				<!-- END CHAMPION -->
+				
+				<!-- FINAL -->
 				<div class="final">
 					
 					<div class="round-details">
@@ -155,6 +165,9 @@
 					</ul>
 				</div>
 			</div>
+			<!-- END FINAL -->
+			
+			<!-- SEMI FINALS -->
 			<div class="split split-two">
 				<div class="round round-three">
 					<div class="round-details">
@@ -169,7 +182,8 @@
 
 				</div>
 				<!-- END SEMI FINALS -->
-
+				
+				<!-- QUARTER FINALS -->
 				<div class="round round-two">
 					<div class="round-details">
 						Quarter Finals<br /> <span class="date">March 18</span>
@@ -189,6 +203,8 @@
 
 				</div>
 				<!-- END QUARTER FINALS -->
+				
+				<!-- ROUND ONE -->
 				<div class="round round-one current">
 					<div class="round-details">
 						Round 1<br /> <span class="date">March 16</span>
