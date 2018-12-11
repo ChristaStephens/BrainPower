@@ -24,6 +24,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    text-shadow: 0 2px 12px #5CCA87;
 }
 
 .dropdown {
@@ -40,10 +41,11 @@ body {
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    text-shadow: 0 2px 12px #5CCA87;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #7070db;
+    background-color: #5CCA87;
 }
 
 .dropdown-content {
