@@ -28,7 +28,7 @@
 <body>
 
 
-<div class="navbar">
+	<div class="navbar">
 		<a href="/">BrainPower</a>
 		<div class="dropdown">
 			<button class="dropbtn">
@@ -38,10 +38,11 @@
 			<div class="dropdown-content">
 				<a href="/table">Scientists</a> <a href="/bracket">Bracket</a>
 			</div>
+			
 		</div>
+		<a href="/alphabet-game">Alphabet Game</a>
 		<a href="/">About</a>
-
-	</div>
+		</div>
 
 
 	<header class="hero">

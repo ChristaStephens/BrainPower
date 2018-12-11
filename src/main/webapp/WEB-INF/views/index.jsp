@@ -32,7 +32,7 @@
 			</div>
 			
 		</div>
-		<a href="/alphabet-game">Alphabet</a>
+		<a href="/alphabet-game">Alphabet Game</a>
 		<a href="/">About</a>
 		</div>
 		
