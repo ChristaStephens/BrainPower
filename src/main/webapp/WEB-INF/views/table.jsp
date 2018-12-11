@@ -78,29 +78,13 @@
 							</c:forEach>
 						</button>
 					</select>
+					<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
 					<button type="submit" class="btn btn-primary mb-2 mr-2">View
 						All</button>
-
-					<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
 					<a href="/table">Clear Filter</a>
 				</form>
 
 
-
-		
-<!-- 		<div> -->
-<!-- 			<form action="/table-view-all"> -->
-<!-- 				<select id="viewAll" name="viewAll"> -->
-<!-- 					<option selected="selected" value="" style="display: none">-View -->
-<!-- 						All-</option> -->
-<!-- 					<option value="alpha">A-Z</option> -->
-<!-- 					<option value="High">Strongest</option> -->
-<!-- 					<option value="low">Weakest</option> -->
-<!-- 				</select> -->
-<!-- 			</form> -->
-
-<!-- 		</div> -->
-	</div>
 
 
 
