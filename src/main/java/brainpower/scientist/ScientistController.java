@@ -89,17 +89,19 @@ public class ScientistController {
 			number = 0;
 			char letter = letters.get(number);
 			List<Scientist> list = scientistDao.findByAlphabet(letter);
+			int r = Utility.getRandom(list.size());
 			System.out.println(number);
 			number++;
 			session.setAttribute("number", number);
 
-			mv.addObject("scientists", list.get(0));
-			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName(), list.get(0).getAltPro());
+			mv.addObject("scientists", list.get(r));
+			String fact = StringParser.parseString(rep.getValue(), list.get(r).getName(), list.get(r).getAltPro());
 			mv.addObject("fact", fact);
 
 		} else if (number >= 0 && number < 24) {
 			char letter = letters.get(number);
 			List<Scientist> list = scientistDao.findByAlphabet(letter);
+			int r = Utility.getRandom(list.size());
 			if (list.size() < 1) {
 				number++;
 				session.setAttribute("number", number);
@@ -107,8 +109,8 @@ public class ScientistController {
 			}
 			number++;
 			session.setAttribute("number", number);
-			mv.addObject("scientists", list.get(0));
-			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName(), list.get(0).getAltPro());
+			mv.addObject("scientists", list.get(r));
+			String fact = StringParser.parseString(rep.getValue(), list.get(r).getName(), list.get(r).getAltPro());
 			mv.addObject("fact", fact);
 		} else if (number == 24) {
 			session.invalidate();
