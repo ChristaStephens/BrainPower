@@ -64,13 +64,12 @@
 						Round 1<br /> <span class="date">March 16</span>
 					</div>
 					<ul class="matchup">
-
+                         <!-- ROUND ONE -->
 
 						<li class="team team-top">${round1.get(0).getScientist().getName()}<span
 							class="score">${round1.get(0).getScientist().getStrength()}</span></li>
 						<li class="team team-top">${round1.get(15).getScientist().getName()}<span
 							class="score">${round1.get(15).getScientist().getStrength()}</span></li>
-
 
 					</ul>
 					<ul class="matchup">
