@@ -1,5 +1,6 @@
 package brainpower.scientist;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -201,6 +202,20 @@ public class ScientistController {
 
 		return mv;
 
+	}
+	
+	@RequestMapping("/add/{id}")
+	public ModelAndView addToCustom(HttpSession session, @PathVariable("id") Long id, @RequestParam(name = "list", required = false)
+	List<Scientist> list) {
+		List<Scientist>	custom = (List<Scientist>) session.getAttribute("list");
+		Scientist s = scientistDao.findById(id);
+		if(custom.size() < 15) {
+		custom.add(s);
+		
+		}
+		session.setAttribute("custom", custom);
+		return new ModelAndView("redirect:/table");
+	
 	}
 
 	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
