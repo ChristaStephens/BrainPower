@@ -107,11 +107,11 @@
 							class="score">${round2.get(7).getScientist().getStrength()}</span></li>
 					</ul>
 					<ul class="matchup">
-<<<<<<< HEAD
-						<li class="team team-top">${round2.get(4).getScientist().getName()}<span
-=======
+
+						
+
 						<li class="team team-top"><small><strong style="color:blue">${round2.get(4).getSeed()}</strong></small> ${round2.get(4).getScientist().getName()}<span
->>>>>>> b2cf344760ac9a6575b4f181bb22e7e49a4c9009
+
 							class="score">${round2.get(4).getScientist().getStrength()}</span></li>
 						<li class="team team-bottom"><small><strong style="color:blue">${round2.get(3).getSeed()}</strong></small> ${round2.get(3).getScientist().getName()}<span
 							class="score">${round2.get(3).getScientist().getStrength()}</span></li>
