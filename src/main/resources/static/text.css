@@ -101,7 +101,7 @@ body {
 	}
 .champion {
 	
-	float:left;
+	float:center;
 	display:block;
 	width: 16%;
 	-webkit-flex-direction:row;
@@ -109,7 +109,7 @@ body {
 	-webkit-align-self:center;
 	align-self:center;
 	margin-top: -15px;
-	text-align: left;
+	text-align: center;
 	padding: 230px 0\9;
 	
 	}
