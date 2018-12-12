@@ -43,7 +43,7 @@ public class Scientist {
 		this.field = field;
 		this.bioLink = bioLink;
 	}
-
+	//check for pronouns
 	public Boolean getAltPro() {
 		return altPro;
 	}
