@@ -116,9 +116,10 @@
 
 	<!-- Share buttons will clean up -->
 
-<p> Like this Fact? Share on social media!</p>
+
 
 	<div id="share">
+	<h1 id="like">Like this Fact? Share on social media!</h1>
 
 		<!-- Buffer -->
 		<a
