@@ -1,4 +1,4 @@
-package brainpower.scientist.model;
+package brainpower.scientist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,9 @@ import org.springframework.stereotype.Component;
 
 import com.gitlab.johnjvester.randomizer.RandomGenerator;
 
-//when you make something a component it lets spring know
-//that you can autowire it, like a singleton
+import brainpower.scientist.model.Scientist;
+import brainpower.scientist.model.Team;
+
 @Component
 public class ScientistTeam {
 

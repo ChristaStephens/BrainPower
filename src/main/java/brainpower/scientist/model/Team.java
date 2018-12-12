@@ -2,6 +2,8 @@ package brainpower.scientist.model;
 
 import lombok.Data;
 
+//bundles all of the get/set - a shortcut
+//also includes hashcode and equals
 @Data
 public class Team {
 	
