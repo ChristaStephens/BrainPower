@@ -41,7 +41,6 @@
 			
 		</div>
 		<a href="/alphabet-game">Alphabet Game</a>
-		<a href="/">About</a>
 		</div>
 
 
@@ -108,7 +107,7 @@
 							class="score">${round2.get(7).getScientist().getStrength()}</span></li>
 					</ul>
 					<ul class="matchup">
-						<li class="team team-top">${round2.get(4).getScientist().getName()}<br><span
+						<li class="team team-top">${round2.get(4).getScientist().getName()}<span
 							class="score">${round2.get(4).getScientist().getStrength()}</span></li>
 						<li class="team team-bottom">${round2.get(3).getScientist().getName()}<span
 							class="score">${round2.get(3).getScientist().getStrength()}</span></li>
