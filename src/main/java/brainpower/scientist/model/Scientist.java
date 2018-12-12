@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-
+//creating a table
 @Entity
 @Table(name = "scientists")
 public class Scientist {

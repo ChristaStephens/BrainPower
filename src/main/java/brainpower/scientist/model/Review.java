@@ -11,12 +11,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "reviews")
 public class Review {
-
+//reviews are strength ratings
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id;
 		private Integer strength;
 		
+		//how we combined tables-get scientist from scientist table
+		// updates scientist with new reviews
 		@ManyToOne
 		@JoinColumn(name = "scientist_id")
 		private Scientist scientist;
