@@ -23,7 +23,8 @@ public class ReviewDao {
 
 	// strength of the scientist
 	public double findAverage(Scientist scientist) {
-		List<Review> average = em.createQuery("FROM Review where scientist =: scientist").setParameter("scientist", scientist)
+		List<Review> average = em.createQuery("FROM Review where scientist =: scientist")
+				.setParameter("scientist", scientist)
 				.getResultList();
 		double strength = 0.0;
 		for (Review r : average) {

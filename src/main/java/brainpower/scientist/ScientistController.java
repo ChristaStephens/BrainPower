@@ -67,7 +67,6 @@ public class ScientistController {
 
 		List<Scientist> scientists = scientistDao.findAll();
 		int r = Utility.getRandom(scientists.size());
-		System.out.println(scientists.get(r).getAltPro());
 		String fact = StringParser.parseString(rep.getValue(), scientists.get(r).getName(), scientists.get(r).getAltPro());
 
 		mv.addObject("scientist", scientists.get(r));
