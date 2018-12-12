@@ -1,5 +1,6 @@
 package brainpower.scientist.model;
 
+//how we brought in the chuck norris api
 public class ChuckResponse {
 	
 	//don't know if we need the id but will use

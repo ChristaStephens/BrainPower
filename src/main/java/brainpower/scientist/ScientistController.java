@@ -59,6 +59,8 @@ public class ScientistController {
 		restTemplateWithUserAgent = new RestTemplateBuilder().additionalInterceptors(interceptor).build();
 	}
 
+	//Home page
+	
 	@RequestMapping("/")
 	public ModelAndView showIndex() {
 
@@ -70,13 +72,15 @@ public class ScientistController {
 		int r = Utility.getRandom(scientists.size());
 		System.out.println(scientists.get(r).getAltPro());
 		String fact = StringParser.parseString(rep.getValue(), scientists.get(r).getName(), scientists.get(r).getAltPro());
-
+		//creating expression language to send to the views
 		mv.addObject("scientist", scientists.get(r));
 		mv.addObject("chuck", rep);
 		mv.addObject("fact", fact);
 		return mv;
 	}
 
+	//ABC order
+	
 	@RequestMapping("/alphabet-game")
 	public ModelAndView alphabetGamePage(HttpSession session,
 			@RequestParam(name = "number", required = false) Integer number) {
@@ -120,6 +124,8 @@ public class ScientistController {
 		return mv;
 	}
 
+	//Table
+	
 	@RequestMapping("/table")
 	public ModelAndView showTable() {
 		List<Scientist> list = scientistDao.findNumber();
@@ -129,6 +135,8 @@ public class ScientistController {
 		return mv;
 	}
 
+	//Filter for Scientist Table
+	
 	@PostMapping("/table-filter")
 	public ModelAndView filterByCountry(@RequestParam(name = "country", required = false) String country,
 			@RequestParam(name = "field", required = false) String field) {
@@ -152,7 +160,8 @@ public class ScientistController {
 
 		return new ModelAndView("table", "scientists", scientistDao.findAll());
 	}
-
+	
+	//radio button is set to true so that we can send strength to SQL
 	@PostMapping("/submit/{id}")
 	public ModelAndView submit(@PathVariable("id") Integer id,
 			@RequestParam(name = "strength", required = true) Integer strength, Scientist scientist) {
@@ -185,6 +194,8 @@ public class ScientistController {
 
 	}
 
+	//Chuck Bracket
+	
 	@RequestMapping("/bracket")
 	// change "required" to "true" when table is mapped.
 	public ModelAndView showBracket() {
@@ -218,7 +229,7 @@ public class ScientistController {
 	
 	}
 
-	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
+// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
 
 //	@RequestMapping("/load")
 //	public ModelAndView load() {

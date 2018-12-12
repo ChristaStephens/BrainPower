@@ -14,7 +14,7 @@ public class Team {
 	
 	public Team() {}
 
-
+	// initialize the object of a class - we need all of these for the bracket
 	public Team(Scientist scientist, Integer strength, Integer seed) {
 		super();
 		this.scientist = scientist;

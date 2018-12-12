@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-
+//creating a table
 @Entity
 @Table(name = "scientists")
 public class Scientist {
@@ -43,7 +43,7 @@ public class Scientist {
 		this.field = field;
 		this.bioLink = bioLink;
 	}
-
+	//check for pronouns
 	public Boolean getAltPro() {
 		return altPro;
 	}
