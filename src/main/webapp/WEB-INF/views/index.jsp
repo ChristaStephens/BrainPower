@@ -39,10 +39,9 @@
 
 
 	
-
+<!-- Rating scientist form -->
 	
 	<form method="post" action="submit/${ scientist.id }">
-
 
 		<h1>
 			<p class="scientist">
@@ -89,7 +88,7 @@
 			</div>
 	</form>
 
-	<!-- Is this scientist stringer than chuck function -->
+	<!-- Is this scientist stronger than chuck function -->
 	<h1>Is This Scientist Stronger Than Chuck?</h1>
 <div style="text-align: center">
 	<span class="yes" onclick="myFunction()"><i

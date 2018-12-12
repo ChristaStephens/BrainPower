@@ -2,6 +2,8 @@ package brainpower.scientist.model;
 
 import lombok.Data;
 
+//bundles all of the get/set - a shortcut
+//also includes hashcode and equals
 @Data
 public class Team {
 	
@@ -12,7 +14,7 @@ public class Team {
 	
 	public Team() {}
 
-
+	// initialize the object of a class - we need all of these for the bracket
 	public Team(Scientist scientist, Integer strength, Integer seed) {
 		super();
 		this.scientist = scientist;

@@ -1,5 +1,6 @@
 package brainpower.scientist;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -58,6 +59,8 @@ public class ScientistController {
 		restTemplateWithUserAgent = new RestTemplateBuilder().additionalInterceptors(interceptor).build();
 	}
 
+	//Home page
+	
 	@RequestMapping("/")
 	public ModelAndView showIndex() {
 
@@ -68,13 +71,15 @@ public class ScientistController {
 		List<Scientist> scientists = scientistDao.findAll();
 		int r = Utility.getRandom(scientists.size());
 		String fact = StringParser.parseString(rep.getValue(), scientists.get(r).getName(), scientists.get(r).getAltPro());
-
+		//creating expression language to send to the views
 		mv.addObject("scientist", scientists.get(r));
 		mv.addObject("chuck", rep);
 		mv.addObject("fact", fact);
 		return mv;
 	}
 
+	//ABC order
+	
 	@RequestMapping("/alphabet-game")
 	public ModelAndView alphabetGamePage(HttpSession session,
 			@RequestParam(name = "number", required = false) Integer number) {
@@ -88,17 +93,19 @@ public class ScientistController {
 			number = 0;
 			char letter = letters.get(number);
 			List<Scientist> list = scientistDao.findByAlphabet(letter);
+			int r = Utility.getRandom(list.size());
 			System.out.println(number);
 			number++;
 			session.setAttribute("number", number);
 
-			mv.addObject("scientists", list.get(0));
-			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName(), list.get(0).getAltPro());
+			mv.addObject("scientists", list.get(r));
+			String fact = StringParser.parseString(rep.getValue(), list.get(r).getName(), list.get(r).getAltPro());
 			mv.addObject("fact", fact);
 
 		} else if (number >= 0 && number < 24) {
 			char letter = letters.get(number);
 			List<Scientist> list = scientistDao.findByAlphabet(letter);
+			int r = Utility.getRandom(list.size());
 			if (list.size() < 1) {
 				number++;
 				session.setAttribute("number", number);
@@ -106,8 +113,8 @@ public class ScientistController {
 			}
 			number++;
 			session.setAttribute("number", number);
-			mv.addObject("scientists", list.get(0));
-			String fact = StringParser.parseString(rep.getValue(), list.get(0).getName(), list.get(0).getAltPro());
+			mv.addObject("scientists", list.get(r));
+			String fact = StringParser.parseString(rep.getValue(), list.get(r).getName(), list.get(r).getAltPro());
 			mv.addObject("fact", fact);
 		} else if (number == 24) {
 			session.invalidate();
@@ -116,6 +123,8 @@ public class ScientistController {
 		return mv;
 	}
 
+	//Table
+	
 	@RequestMapping("/table")
 	public ModelAndView showTable() {
 		List<Scientist> list = scientistDao.findNumber();
@@ -125,6 +134,8 @@ public class ScientistController {
 		return mv;
 	}
 
+	//Filter for Scientist Table
+	
 	@PostMapping("/table-filter")
 	public ModelAndView filterByCountry(@RequestParam(name = "country", required = false) String country,
 			@RequestParam(name = "field", required = false) String field) {
@@ -148,7 +159,8 @@ public class ScientistController {
 
 		return new ModelAndView("table", "scientists", scientistDao.findAll());
 	}
-
+	
+	//radio button is set to true so that we can send strength to SQL
 	@PostMapping("/submit/{id}")
 	public ModelAndView submit(@PathVariable("id") Integer id,
 			@RequestParam(name = "strength", required = true) Integer strength, Scientist scientist) {
@@ -181,6 +193,8 @@ public class ScientistController {
 
 	}
 
+	//Chuck Bracket
+	
 	@RequestMapping("/bracket")
 	// change "required" to "true" when table is mapped.
 	public ModelAndView showBracket() {
@@ -199,8 +213,22 @@ public class ScientistController {
 		return mv;
 
 	}
+	
+	@RequestMapping("/add/{id}")
+	public ModelAndView addToCustom(HttpSession session, @PathVariable("id") Long id, @RequestParam(name = "list", required = false)
+	List<Scientist> list) {
+		List<Scientist>	custom = (List<Scientist>) session.getAttribute("list");
+		Scientist s = scientistDao.findById(id);
+		if(custom.size() < 15) {
+		custom.add(s);
+		
+		}
+		session.setAttribute("custom", custom);
+		return new ModelAndView("redirect:/table");
+	
+	}
 
-	// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
+// Dummy Mapping To Call WikiCrawler & ADD Parsed Data To Database
 
 //	@RequestMapping("/load")
 //	public ModelAndView load() {

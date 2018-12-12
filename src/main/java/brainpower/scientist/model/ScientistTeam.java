@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 import com.gitlab.johnjvester.randomizer.RandomGenerator;
 
+//when you make something a component it lets spring know
+//that you can autowire it, like a singleton
 @Component
 public class ScientistTeam {
 

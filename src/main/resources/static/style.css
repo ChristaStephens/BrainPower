@@ -3,6 +3,8 @@ h1{
 	text-align: center;
 	
 }
+
+
 body {
 	background-color: #b6b6b6;
 	color: black;
@@ -79,7 +81,7 @@ body {
 }
 
 
-<!-- next button -->
+
 
 .button a{
 	color: white;
@@ -87,7 +89,8 @@ body {
 	
 }
 
-<!-- table -->
+
+
 table {
     border-collapse: collapse;
     width: 80%;
@@ -120,6 +123,8 @@ th {
 }
 
 tr:hover {background-color: #aaacac;}
+
+
 
  #petty{
 	 width:25px;
