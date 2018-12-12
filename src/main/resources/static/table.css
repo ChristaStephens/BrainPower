@@ -17,6 +17,7 @@ body {
     overflow: hidden;
     background-color: #4d4d4d;
     font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 5px 10px 10px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .navbar a {
@@ -134,7 +135,7 @@ body {
 table {
     float: left;
     width: 20%;
-    box-shadow: 0 12px 50px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 70px 10px 20px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 th, td {
@@ -174,7 +175,7 @@ tr:hover {background-color: #aaacac;}
 
 
 img:hover {
-  box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.5);
+  box-shadow: 0 0 10px 5px rgba(0, 140, 186, 0.5);
 }
 
 
@@ -182,5 +183,10 @@ img:hover {
 	
 	padding-left: 370px;
 	padding-top: 20px;
+	text-color: blue;
+}
+
+.clear{
+	color:white;
 }
 

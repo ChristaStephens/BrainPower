@@ -57,7 +57,6 @@
 			
 		</div>
 		<a href="/alphabet-game">Alphabet Game</a>
-		<a href="/">About</a>
 		</div>
 	
 	<!-- Scientist table filter -->
@@ -81,7 +80,7 @@
 					<button type="submit" class="btn btn-primary mb-2 mr-2">Search</button>
 					<button type="submit" class="btn btn-primary mb-2 mr-2">View
 						All</button>
-					<a href="/table">Clear Filter</a>
+					<a class="clear" href="/table">Clear Filter</a>
 				</form>
 
 

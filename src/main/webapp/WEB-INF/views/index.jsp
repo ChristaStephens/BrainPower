@@ -33,7 +33,6 @@
 			
 		</div>
 		<a href="/alphabet-game">Alphabet Game</a>
-		<a href="/">About</a>
 		</div>
 		
 
@@ -98,6 +97,7 @@
 </div>
 <div style="text-align: center">
 	<p id="demo"></p>
+	
 	<script>
 		function myFunction() {
 			document.getElementById("demo").innerHTML = "Are you nuts, the Norse Gods are named after Chuck Norris. No one is stronger than Chuck!";
@@ -115,9 +115,9 @@
 
 	<!-- Share buttons will clean up -->
 
-<h1>Like this Fact? Share on social media!</h1>
 
 	<div id="share">
+	<h1 id="like">Like this Fact? Share on social media!</h1>
 
 		<!-- Buffer -->
 		<a
