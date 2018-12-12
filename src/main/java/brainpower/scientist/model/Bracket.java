@@ -25,8 +25,6 @@ public class Bracket {
 	private String round3;
 	private String champion;
 	
-	@OneToMany(mappedBy = "bracket")
-	private Set<Scientist> scientists;
 	
 	
 

@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @charset "UTF-8";
+
+
 h1{
 	text-align: center;
 	
@@ -74,8 +76,6 @@ body {
     display: block;
 }
 
-
-<!--picture card -->
 .column {
 	float: center;
 	width: 30.3%;
@@ -131,7 +131,6 @@ body {
 }
 
 
-<!-- table -->
 table {
     float: left;
     width: 20%;
