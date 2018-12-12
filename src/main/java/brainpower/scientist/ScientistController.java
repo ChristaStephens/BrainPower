@@ -160,7 +160,8 @@ public class ScientistController {
 
 		return new ModelAndView("table", "scientists", scientistDao.findAll());
 	}
-
+	
+	//radio button is set to true so that we can send strength to SQL
 	@PostMapping("/submit/{id}")
 	public ModelAndView submit(@PathVariable("id") Integer id,
 			@RequestParam(name = "strength", required = true) Integer strength, Scientist scientist) {
