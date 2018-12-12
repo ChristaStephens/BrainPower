@@ -176,9 +176,9 @@
 						Semi-Finals<br /> <span class="date">March 22</span>
 					</div>
 					<ul class="matchup">
-						<li class="team team-top">${round3.get(2).getScientist().getName()}<span
+						<li class="team team-top"><small><strong style="color:blue">${round3.get(2).getSeed()}</strong></small> ${round3.get(2).getScientist().getName()}<span
 							class="score">${round3.get(2).getScientist().getStrength()}</span></li>
-						<li class="team team-bottom">${round3.get(1).getScientist().getName()}<span
+						<li class="team team-bottom"><small><strong style="color:blue">${round3.get(2).getSeed()}</strong></small> ${round3.get(1).getScientist().getName()}<span
 							class="score">${round3.get(1).getScientist().getStrength()}</span></li>
 					</ul>
 
